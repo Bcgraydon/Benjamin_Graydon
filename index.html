@@ -7,57 +7,61 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
     <nav aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
       <a href="project1.html">Project 1</a>
       <a href="project2.html">Project 2</a>
     </nav>
-    <h1>Benjamin Graydon</h1>
-    <p>
-      <a href="mailto:benjamin.graydon@ucf.edu">benjamin.graydon@ucf.edu</a> ·
-      <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
-    </p>
-  <p class="actions">
+
+    <div class="hero">
+      <div class="intro">
+        <h1>Benjamin Graydon</h1>
+        <p>
+          <a href="mailto:benjamin.graydon@ucf.edu">benjamin.graydon@ucf.edu</a> ·
+          <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+
+        <p class="actions">
           <a class="btn" href="assets/Graydon resume.pdf" download>Download Resume (PDF)</a>
           <a class="btn secondary" href="assets/Graydon-Resume.pdf" target="_blank" rel="noopener">View Resume</a>
         </p>
       </div>
-  
-   <img
+
+      <img
         src="assets/HeadShot.jpg"
         alt="Headshot of Benjamin Graydon"
         width="180" height="180"
         class="headshot"
       />
     </div>
-  
   </header>
 
-  
-
   <main id="main">
-    <section>
-      <h2>Objective</h2>
-      <p>Entry-level cybersecurity analyst focused on SOC workflows & threat hunting.</p>
+    <section aria-labelledby="objective">
+      <h2 id="objective">Objective</h2>
+      <p>Entry-level cybersecurity analyst focused on SOC workflows &amp; threat hunting.</p>
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <p>UCF — B.S. Information Technology (Minor: Secure Computing & Networking)</p>
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <p>University of Central Florida — B.S. Information Technology (Minor: Secure Computing &amp; Networking)</p>
     </section>
 
-    <section>
-      <h2>Skills</h2>
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
       <ul>
         <li>Python, Java, C</li>
-        <li>Networking & AWS basics</li>
+        <li>Networking &amp; AWS basics</li>
         <li>SIEM/IDS fundamentals</li>
       </ul>
     </section>
   </main>
 
-  <footer><p>&copy; 2025 Benjamin Graydon</p></footer>
+  <footer>
+    <p>&copy; 2025 Benjamin Graydon</p>
+  </footer>
 </body>
 </html>
-
