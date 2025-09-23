@@ -34,22 +34,22 @@
         generate an invoice and append a transaction record. The app reads an input file
         <code>inventory.csv</code> (id, quoted description, in-stock status, quantity, unit price) and
         appends order details to <code>transactions.csv</code> with a unique timestamp-based id. 
-        :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+        
       </p>
       <p>
         The main window includes labeled input areas, a live cart display, a running subtotal,
         and six workflow buttons that enable/disable as the user progresses (search, add to cart,
-        delete last item, check out, clear/new order, exit). :contentReference[oaicite:2]{index=2}
+        delete last item, check out, clear/new order, exit). 
       </p>
       <p>
         Constraints and pricing logic: cart capacity is limited to <strong>5 items</strong>;
         tax rate is <strong>6%</strong>; volume discounts apply per-item:
-        1–4 → 0%, 5–9 → 10%, 10–14 → 15%, 15+ → 20%. :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
+        1–4 → 0%, 5–9 → 10%, 10–14 → 15%, 15+ → 20%. 
       </p>
       <p>
         Error handling follows the spec with dialogs for out-of-stock, item-not-found,
         and quantity-exceeds-stock; checkout shows an invoice and writes to the transaction log.
-        :contentReference[oaicite:5]{index=5}
+        
       </p>
     </section>
 
@@ -60,7 +60,7 @@
         <li>Event-driven programming with Java GUIs (listeners, state-driven UI). :contentReference[oaicite:6]{index=6}</li>
         <li>File I/O with CSV formats: parsing <code>inventory.csv</code>, appending <code>transactions.csv</code>. :contentReference[oaicite:7]{index=7}</li>
         <li>Business logic: tax and tiered volume discounts; currency formatting. :contentReference[oaicite:8]{index=8}</li>
-        <li>UX flow control: enabling/disabling buttons across steps; error dialog handling. :contentReference[oaicite:9]{index=9}</li>
+        <li>UX flow control: enabling/disabling buttons across steps; error dialog handling. </li>
       </ul>
     </section>
 
