@@ -3,26 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Project 2 — Title</title>
+  <title>Project 2 — Synchronized/Cooperating Threads: Banking Simulator</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
     <nav aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="project1.html">Project 1</a>
       <a href="project2.html" aria-current="page">Project 2</a>
     </nav>
-    <h1>Project 2 — Title</h1>
+    <!-- (a) Title for the project -->
+    <h1>Project 2 — Synchronized/Cooperating Threads: Banking Simulator</h1>
   </header>
-  <main>
-    <h2>Description</h2>
-    <p>What it does, your role, challenges, outcome.</p>
 
-    <h2>Skills Learned</h2>
-    <ul><li>Example</li><li>Example</li></ul>
+  <main id="main">
+    <!-- (b) Image that illustrates the project -->
+    <figure>
+      <img src="assets/project2.jpg" alt="Console output / diagram illustrating the Java banking simulator with multiple agents and locks" />
+      <figcaption>Java banking simulator with cooperating, synchronized threads and locking.</figcaption>
+    </figure>
+
+    <!-- (c) Description of the project -->
+    <section aria-labelledby="desc">
+      <h2 id="desc">Description</h2>
+      <p>
+        A Java multithreaded simulation of a bank with two shared accounts and five agent types running concurrently:
+        depositors, withdrawers, transfer agents, an internal auditor, and a U.S. Treasury auditor. Access to the shared
+        accounts is synchronized using <code>java.util.concurrent</code> locks to ensure mutual exclusion, with withdrawing
+        threads blocking when funds are insufficient and being awakened after deposits. Transfers and audits are atomic
+        operations that require holding multiple account locks together; if all locks can’t be acquired immediately, those
+        agents release what they hold and try again later. The simulation emphasizes proper coordination, random timing
+        of events, and consistent snapshotting during audits. 
+      </p>
+    </section>
+
+    <!-- (d) Skills learned -->
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills Learned</h2>
+      <ul>
+        <li>Designing cooperating, synchronized threads (producer/consumer–style patterns).</li>
+        <li>Using reentrant locks, conditions (await/signal), and non-blocking <code>tryLock</code> to avoid deadlock.</li>
+        <li>Coordinating atomic multi-resource operations (transfers, auditable snapshots) with lock ordering.</li>
+        <li>ExecutorService with a fixed thread pool to manage agent lifecycles and pacing.</li>
+        <li>Defining clear thread responsibilities and state machines for realistic simulations.</li>
+      </ul>
+    </section>
   </main>
+
   <footer><p>&copy; 2025 Benjamin Graydon</p></footer>
 </body>
 </html>
+
 
