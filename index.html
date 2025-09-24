@@ -11,9 +11,9 @@
 
   <header>
     <nav aria-label="Primary">
-      <a href="index.html" aria-current="page">Resume</a>
-      <a href="project1.html">Project 1</a>
-      <a href="project2.html">Project 2</a>
+      <a class="pill" href="index.html" aria-current="page">Resume</a>
+      <a class="pill" href="project1.html">Project 1</a>
+      <a class="pill" href="project2.html">Project 2</a>
     </nav>
 
     <div class="hero">
@@ -24,8 +24,8 @@
           <a href="https://www.linkedin.com/in/benjamin-graydon-3b5562300/" target="_blank" rel="noopener">LinkedIn</a>
         </p>
         <p class="actions">
-          <!-- keep the space in the filename if your file is named exactly like this -->
-          <a class="btn" href="assets/Graydon resume.pdf" download>Download Resume (PDF)</a>
+          <!-- space encoded to avoid 404 -->
+          <a class="btn" href="assets/Graydon%20resume.pdf" download>Download Resume (PDF)</a>
         </p>
       </div>
 
@@ -36,7 +36,6 @@
   </header>
 
   <main id="main">
-    <!-- Resume content begins -->
     <section aria-labelledby="summary">
       <h2 id="summary">Professional Summary</h2>
       <p>UCF Information Technology student (Minor: Secure Computing &amp; Networking) and USMC Reserve NCO with training in all-source intelligence analysis. Seeking an entry-level cybersecurity role; comfortable starting in adjacent IT/operations roles while building SOC and threat-hunting skills.</p>
@@ -95,7 +94,7 @@
       </ul>
     </section>
 
-    <!-- New: nice “card” buttons for projects -->
+    <!-- Big “card” buttons linking to your two projects -->
     <section aria-labelledby="projects-links">
       <h2 id="projects-links">Projects</h2>
       <div class="button-grid">
@@ -119,7 +118,6 @@
       <h2 id="contact">Contact</h2>
       <p>Email: <a href="mailto:be773920@ucf.edu">be773920@ucf.edu</a></p>
     </section>
-    <!-- Resume content ends -->
   </main>
 
   <footer>
