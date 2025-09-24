@@ -27,34 +27,50 @@ header, main, footer {
 }
 
 /* ========= Top navigation as pill buttons ========= */
-nav { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .5rem; }
-nav a { margin-right: 0; }
+nav {
+  display: flex;
+  justify-content: center;      /* center the three buttons */
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin: .25rem 0 1rem;
+}
 
 nav a.pill {
   display: inline-block;
-  padding: .4rem .75rem;
+  padding: .5rem .9rem;
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  background: #f8fafc;
-  color: #0b5fff;
-  font-weight: 600;
+  border: 1px solid #d6dbe1;    /* ultra-light outline */
+  background: #fff;             /* clean, flat */
+  color: #111;                  /* neutral text */
+  font-weight: 500;             /* subtle, not loud */
   text-decoration: none;
-  transition: background .12s ease, border-color .12s ease, transform .06s ease, box-shadow .12s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  line-height: 1;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);  /* whisper shadow */
+  transition: background .12s ease, border-color .12s ease, box-shadow .12s ease, transform .06s ease;
 }
-nav a.pill:hover,
-nav a.pill:focus-visible {
-  background: #eef2f7;
-  border-color: #c7ccd1;
+
+nav a.pill:hover {
+  background: #f6f8fa;          /* soft hover */
+  border-color: #cfd6dd;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
   transform: translateY(-1px);
   text-decoration: none;
 }
+
+nav a.pill:focus-visible {
+  outline: none;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.08),
+    0 0 0 3px rgba(11,95,255,.18);  /* subtle focus ring */
+}
+
 nav a.pill[aria-current="page"] {
-  background: #0b5fff;
+  background: #0b5fff;          /* single, calm accent for the current tab */
   color: #fff;
   border-color: #0b5fff;
-  box-shadow: 0 2px 6px rgba(11,95,255,.28);
+  box-shadow: 0 2px 8px rgba(11,95,255,.22);
 }
+
 
 /* ========= Hero (name + contact + headshot) ========= */
 .hero { display: grid; gap: 1rem; align-items: center; }
