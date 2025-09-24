@@ -11,64 +11,46 @@
 
   <header>
     <nav aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="project1.html" aria-current="page">Project 1</a>
-      <a href="project2.html">Project 2</a>
+      <a class="pill" href="index.html">Resume</a>
+      <a class="pill" href="project1.html" aria-current="page">Project 1</a>
+      <a class="pill" href="project2.html">Project 2</a>
     </nav>
     <h1>Project 1 — Event-Driven Programming (Nile Dot Com)</h1>
   </header>
 
   <main id="main">
-    <!-- (b) Image that illustrates the project -->
     <figure>
-      <img src="assets/project1.jpg" alt="Screenshot of the Nile Dot Com Java GUI project" />
-      <figcaption>Java GUI e-store simulation (“Nile Dot Com”).</figcaption>
+      <img src="assets/project1.jpg" alt="Screenshot of the Nile Dot Com Java GUI" />
+      <figcaption>Java GUI e-store simulation with cart, discounts, and logging.</figcaption>
     </figure>
 
-    <!-- (c) Description of the project -->
     <section aria-labelledby="desc">
       <h2 id="desc">Description</h2>
       <p>
         A standalone Java GUI that simulates an e-store (“Nile Dot Com”). Users search inventory,
         add up to five distinct items to a shopping cart, see a running subtotal, then check out to
-        generate an invoice and append a transaction record. The app reads an input file
+        generate an invoice and append a transaction record. The app reads
         <code>inventory.csv</code> (id, quoted description, in-stock status, quantity, unit price) and
-        appends order details to <code>transactions.csv</code> with a unique timestamp-based id. 
-        
+        appends order details to <code>transactions.csv</code> with a timestamp-based id.
       </p>
       <p>
         The main window includes labeled input areas, a live cart display, a running subtotal,
         and six workflow buttons that enable/disable as the user progresses (search, add to cart,
-        delete last item, check out, clear/new order, exit). 
+        delete last item, check out, clear/new order, exit).
       </p>
       <p>
-        Constraints and pricing logic: cart capacity is limited to <strong>5 items</strong>;
-        tax rate is <strong>6%</strong>; volume discounts apply per-item:
-        1–4 → 0%, 5–9 → 10%, 10–14 → 15%, 15+ → 20%. 
-      </p>
-      <p>
-        Error handling follows the spec with dialogs for out-of-stock, item-not-found,
-        and quantity-exceeds-stock; checkout shows an invoice and writes to the transaction log.
-        
+        Pricing and constraints: cart capacity <strong>5 items</strong>; tax <strong>6%</strong>;
+        tiered discounts per item — 1–4 (0%), 5–9 (10%), 10–14 (15%), 15+ (20%).
       </p>
     </section>
 
-    <!-- (d) Skills learned -->
     <section aria-labelledby="skills">
       <h2 id="skills">Skills Learned</h2>
       <ul>
-        <li>Event-driven programming with Java GUIs (listeners, state-driven UI). :contentReference[oaicite:6]{index=6}</li>
-        <li>File I/O with CSV formats: parsing <code>inventory.csv</code>, appending <code>transactions.csv</code>. :contentReference[oaicite:7]{index=7}</li>
-        <li>Business logic: tax and tiered volume discounts; currency formatting. :contentReference[oaicite:8]{index=8}</li>
-        <li>UX flow control: enabling/disabling buttons across steps; error dialog handling. </li>
-      </ul>
-    </section>
-
-    <!-- Optional: link to the assignment PDF you uploaded -->
-    <section aria-labelledby="files">
-      <h2 id="files">Files</h2>
-      <ul>
-        <li><a href="assets/Project1.pdf" target="_blank" rel="noopener">Assignment PDF</a></li>
+        <li>Event-driven programming with Java GUIs (listeners, state-driven UI)</li>
+        <li>CSV file I/O for inventory and transaction logs</li>
+        <li>Tax/discount calculations and currency formatting</li>
+        <li>Error dialogs and UX flow control (enable/disable actions)</li>
       </ul>
     </section>
   </main>
