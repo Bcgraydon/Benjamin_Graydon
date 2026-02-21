@@ -24,6 +24,11 @@
   </header>
 
   <main id="main">
+    <figure>
+      <img src="assets/smallbusiness/SB-Topology.png" alt="Packet Tracer topology overview of the small business network" />
+      <figcaption>Topology overview - segmented small business network built in Cisco Packet Tracer.</figcaption>
+    </figure>
+
     <section aria-labelledby="overview">
       <h2 id="overview">Overview</h2>
       <p>
@@ -51,31 +56,39 @@
         <li><strong>Addressing:</strong> Separate subnet per VLAN with a default gateway per VLAN.</li>
         <li><strong>Security:</strong> ACLs to block unauthorized VLAN-to-VLAN traffic and isolate guests.</li>
       </ul>
+    </section>
 
-      <p>
-        <strong>Screenshot:</strong> Add your Packet Tracer topology image here when ready.
-      </p>
+    <section aria-labelledby="screens">
+      <h2 id="screens">Screenshots</h2>
 
-      <!-- OPTIONAL: Add a screenshot later by exporting an image and placing it in /assets/ -->
-      <!--
       <figure>
-        <img src="assets/smallbiz-topology.jpg" alt="Packet Tracer topology for the small business network" />
-        <figcaption>Small business network topology built in Cisco Packet Tracer.</figcaption>
+        <img src="assets/smallbusiness/SB-Vlan.png" alt="Switch output showing VLAN configuration (show vlan brief)" />
+        <figcaption>VLAN configuration proof - show vlan brief.</figcaption>
       </figure>
-      -->
+
+      <figure>
+        <img src="assets/smallbusiness/SB-Trunk.png" alt="Switch output showing trunk configuration (show interfaces trunk)" />
+        <figcaption>Trunk proof - show interfaces trunk.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/smallbusiness/SB-AC.png" alt="ACL rules and matches showing traffic filtering" />
+        <figcaption>ACL proof - rules and match counts.</figcaption>
+      </figure>
     </section>
 
     <section aria-labelledby="testing">
       <h2 id="testing">Testing and Validation</h2>
       <p>
         I validated the design by testing reachability within each VLAN and confirming that restricted traffic between VLANs
-        was blocked as intended. Troubleshooting was done using basic router and switch commands and reviewing ACL matches.
+        was blocked as intended. Troubleshooting was done using basic router and switch commands and reviewing configuration
+        output to confirm the network met the requirements.
       </p>
       <ul>
         <li><strong>Connectivity:</strong> Verified hosts can reach their default gateway and required internal resources.</li>
         <li><strong>Segmentation:</strong> Confirmed VLAN separation at Layer 2.</li>
         <li><strong>ACL policy:</strong> Confirmed blocked paths fail (expected) and allowed paths succeed (expected).</li>
-        <li><strong>Troubleshooting:</strong> Used show commands (interfaces, VLANs, trunks, access-lists) to confirm configuration.</li>
+        <li><strong>Troubleshooting:</strong> Used show commands (interfaces, VLANs, trunks, access rules) to confirm configuration.</li>
       </ul>
     </section>
 
@@ -93,7 +106,7 @@
     <section aria-labelledby="files">
       <h2 id="files">Project Files</h2>
       <p>
-        If you want, you can link your Packet Tracer file and documentation here:
+        Add links here if you want to publish the Packet Tracer file and any documentation:
       </p>
       <ul>
         <li><strong>Packet Tracer file:</strong> <em>Add link</em></li>
