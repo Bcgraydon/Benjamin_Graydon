@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Networking Project - Medium Business Network (Packet Tracer)</title>
+  <title>Medium Business Network (Packet Tracer) | Benjamin Graydon</title>
+  <meta name="description" content="Medium-sized business network in Cisco Packet Tracer: L3 core with SVIs, segmented VLANs, centralized services (DHCP/DNS/HTTP/File), and ACL-based access control with validation tests." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -13,109 +14,228 @@
     <nav aria-label="Primary">
       <a class="pill" href="index.html">Home</a>
       <a class="pill" href="resume.html">Resume</a>
-      <a class="pill" href="projects.html">Projects</a>
+      <a class="pill" href="projects.html" aria-current="page">Projects</a>
     </nav>
 
     <p class="actions">
       <a class="btn secondary" href="projects.html">Back to Projects</a>
     </p>
 
-    <h1>Medium Business Network - Packet Tracer Project</h1>
+    <h1>Medium Business Network — Cisco Packet Tracer</h1>
+    <p class="lede">
+      Layer 3 core (SVIs) + segmented department VLANs + centralized services + ACL-driven access control.
+    </p>
+
+    <nav aria-label="On this page" class="pillbar">
+      <a class="pill" href="#overview">Overview</a>
+      <a class="pill" href="#topology">Topology</a>
+      <a class="pill" href="#vlans">VLANs</a>
+      <a class="pill" href="#services">Services</a>
+      <a class="pill" href="#policy">Security Policy</a>
+      <a class="pill" href="#screens">Evidence</a>
+      <a class="pill" href="#testing">Validation</a>
+      <a class="pill" href="#files">Download</a>
+    </nav>
   </header>
 
   <main id="main">
+    <section aria-labelledby="summary">
+      <h2 id="summary">Quick Facts</h2>
+      <ul class="summary">
+        <li><strong>Routing:</strong> L3 core switch with SVIs + <code>ip routing</code></li>
+        <li><strong>Segmentation:</strong> 9 VLANs (departments + servers + printers + guest + mgmt)</li>
+        <li><strong>Services VLAN:</strong> DHCP, DNS, Intranet (HTTP), File server</li>
+        <li><strong>DHCP delivery:</strong> DHCP relay via <code>ip helper-address</code> on SVIs</li>
+        <li><strong>Security:</strong> ACLs enforce “deny-by-default” inter-VLAN policy with approved exceptions</li>
+        <li><strong>Guest:</strong> Internet/DHCP allowed; internal networks blocked</li>
+      </ul>
+    </section>
+
     <figure>
-      <img src="assets/mediumbusiness/MB-Topology.png" alt="Packet Tracer topology overview of the medium business network" />
-      <figcaption>Topology overview - Layer 3 core with three access switches and segmented department VLANs.</figcaption>
+      <img
+        src="assets/mediumbusiness/MB-Topology.png"
+        alt="Packet Tracer topology showing a Layer 3 core switch connected to three access switches with segmented VLANs and a servers VLAN"
+        loading="lazy"
+        width="1200"
+        height="675"
+      />
+      <figcaption>Topology overview — Layer 3 core with three access switches and segmented department VLANs.</figcaption>
     </figure>
 
     <section aria-labelledby="overview">
       <h2 id="overview">Overview</h2>
       <p>
-        This Packet Tracer project models a medium-sized business network with multiple departments, each on its own VLAN.
-        Inter-VLAN routing is handled by a Layer 3 core switch using SVIs. Centralized services (DHCP, DNS, web, file) are hosted
-        on separate servers, and ACLs enforce segmentation with controlled cross-access between specific departments.
+        This Packet Tracer project models a medium-sized business network with department VLANs, a Layer 3 core switch providing
+        inter-VLAN routing via SVIs, and centralized services hosted in a dedicated Servers VLAN. ACLs enforce segmentation with
+        controlled cross-access between approved departments and restricted access to the Management VLAN.
       </p>
     </section>
 
     <section aria-labelledby="topology">
       <h2 id="topology">Topology</h2>
       <ul>
-        <li><strong>Core:</strong> Layer 3 switch (SVIs + ip routing)</li>
-        <li><strong>Access:</strong> 3 access switches (trunk uplinks, access ports per department)</li>
+        <li><strong>Core:</strong> Layer 3 switch (SVIs + <code>ip routing</code>)</li>
+        <li><strong>Access:</strong> Three access switches (802.1Q trunk uplinks, access ports per department)</li>
         <li><strong>Edge:</strong> Router uplink for default route (optional internet simulation)</li>
-        <li><strong>Services:</strong> Separate DHCP, DNS, Web, and File servers</li>
+        <li><strong>Services:</strong> Dedicated Servers VLAN with DHCP, DNS, intranet web, and file server</li>
       </ul>
     </section>
 
     <section aria-labelledby="vlans">
       <h2 id="vlans">VLANs and Addressing</h2>
-      <ul>
-        <li>VLAN 10 - HR - 10.10.10.0/24 (GW 10.10.10.1)</li>
-        <li>VLAN 20 - Finance - 10.10.20.0/24 (GW 10.10.20.1)</li>
-        <li>VLAN 30 - Sales - 10.10.30.0/24 (GW 10.10.30.1)</li>
-        <li>VLAN 40 - IT - 10.10.40.0/24 (GW 10.10.40.1)</li>
-        <li>VLAN 50 - Operations - 10.10.50.0/24 (GW 10.10.50.1)</li>
-        <li>VLAN 60 - Servers - 10.10.60.0/24 (GW 10.10.60.1)</li>
-        <li>VLAN 70 - Printers - 10.10.70.0/24 (GW 10.10.70.1)</li>
-        <li>VLAN 80 - Guest - 10.10.80.0/24 (GW 10.10.80.1)</li>
-        <li>VLAN 99 - Management - 10.10.99.0/24 (GW 10.10.99.1)</li>
-      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Department VLANs and default gateways (SVIs on the L3 core)</caption>
+          <thead>
+            <tr>
+              <th scope="col">VLAN</th>
+              <th scope="col">Name</th>
+              <th scope="col">Subnet</th>
+              <th scope="col">Gateway</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10</td><td>HR</td><td>10.10.10.0/24</td><td>10.10.10.1</td></tr>
+            <tr><td>20</td><td>Finance</td><td>10.10.20.0/24</td><td>10.10.20.1</td></tr>
+            <tr><td>30</td><td>Sales</td><td>10.10.30.0/24</td><td>10.10.30.1</td></tr>
+            <tr><td>40</td><td>IT</td><td>10.10.40.0/24</td><td>10.10.40.1</td></tr>
+            <tr><td>50</td><td>Operations</td><td>10.10.50.0/24</td><td>10.10.50.1</td></tr>
+            <tr><td>60</td><td>Servers</td><td>10.10.60.0/24</td><td>10.10.60.1</td></tr>
+            <tr><td>70</td><td>Printers</td><td>10.10.70.0/24</td><td>10.10.70.1</td></tr>
+            <tr><td>80</td><td>Guest</td><td>10.10.80.0/24</td><td>10.10.80.1</td></tr>
+            <tr><td>99</td><td>Management</td><td>10.10.99.0/24</td><td>10.10.99.1</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section aria-labelledby="services">
       <h2 id="services">Services</h2>
-      <ul>
-        <li><strong>DHCP Server:</strong> 10.10.60.10 (DHCP relay via ip helper-address on SVIs)</li>
-        <li><strong>DNS Server:</strong> 10.10.60.11</li>
-        <li><strong>Web Server (Intranet):</strong> 10.10.60.12</li>
-        <li><strong>File Server:</strong> 10.10.60.13</li>
-      </ul>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Centralized services hosted in VLAN 60 (Servers)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">IP</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DHCP</td>
+              <td>10.10.60.10</td>
+              <td>DHCP relay via <code>ip helper-address</code> on SVIs</td>
+            </tr>
+            <tr><td>DNS</td><td>10.10.60.11</td><td>Internal name resolution (intranet hostname)</td></tr>
+            <tr><td>Web (Intranet)</td><td>10.10.60.12</td><td>HTTP access validated via DNS hostname</td></tr>
+            <tr><td>File Server</td><td>10.10.60.13</td><td>Internal file service (simulation)</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <section aria-labelledby="security">
-      <h2 id="security">Access Control and Segmentation</h2>
-      <ul>
-        <li><strong>Guest VLAN:</strong> blocked from internal VLANs; DHCP works via relay</li>
-        <li><strong>Management VLAN:</strong> only IT VLAN can access management IPs (ACL enforced on VLAN 99 outbound)</li>
-        <li><strong>Cross-access:</strong> HR ↔ Finance allowed; Sales ↔ Operations allowed</li>
-        <li><strong>Default segmentation:</strong> other inter-department access is restricted</li>
-      </ul>
+    <section aria-labelledby="policy">
+      <h2 id="policy">Access Control and Segmentation</h2>
+      <p>
+        Inter-VLAN access is restricted by default and enabled only where business requirements exist. Guest traffic is isolated
+        from internal networks while still receiving DHCP via relay. Management IPs are restricted to IT.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Policy matrix (high-level)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Source</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Result</th>
+              <th scope="col">Business reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Guest (VLAN 80)</td><td>Internal VLANs (10/20/30/40/50/60/70/99)</td><td><strong>Deny</strong></td><td>Guest isolation</td></tr>
+            <tr><td>Guest (VLAN 80)</td><td>DHCP/DNS (via relay)</td><td><strong>Allow</strong></td><td>Basic connectivity</td></tr>
+            <tr><td>HR (VLAN 10)</td><td>Finance (VLAN 20)</td><td><strong>Allow</strong></td><td>Payroll/budget workflows</td></tr>
+            <tr><td>Sales (VLAN 30)</td><td>Operations (VLAN 50)</td><td><strong>Allow</strong></td><td>Order fulfillment workflows</td></tr>
+            <tr><td>IT (VLAN 40)</td><td>Management (VLAN 99)</td><td><strong>Allow</strong></td><td>Device administration</td></tr>
+            <tr><td>All other inter-department</td><td>Other departments</td><td><strong>Deny</strong></td><td>Least privilege</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <details>
+        <summary>Verification commands used</summary>
+        <ul>
+          <li><code>show vlan brief</code></li>
+          <li><code>show interfaces trunk</code></li>
+          <li><code>show ip interface brief</code></li>
+          <li><code>show ip route</code></li>
+          <li><code>show access-lists</code> (match counts)</li>
+          <li><code>show ip dhcp binding</code> (or DHCP server lease view)</li>
+        </ul>
+      </details>
     </section>
 
     <section aria-labelledby="screens">
-      <h2 id="screens">Screenshots</h2>
+      <h2 id="screens">Evidence (Screenshots)</h2>
 
       <figure>
-        <img src="assets/mediumbusiness/MB-VLANs.png" alt="Switch output showing VLAN configuration" />
-        <figcaption>VLAN verification - show vlan brief.</figcaption>
+        <img
+          src="assets/mediumbusiness/MB-VLANs.png"
+          alt="show vlan brief output confirming VLANs and assigned ports"
+          loading="lazy"
+          width="1200"
+          height="675"
+        />
+        <figcaption>VLAN verification — <code>show vlan brief</code>.</figcaption>
       </figure>
 
       <figure>
-        <img src="assets/mediumbusiness/MB-Trunks.png" alt="Switch output showing trunk configuration" />
-        <figcaption>Trunk verification - show interfaces trunk.</figcaption>
+        <img
+          src="assets/mediumbusiness/MB-Trunks.png"
+          alt="show interfaces trunk output confirming trunk links and allowed VLANs"
+          loading="lazy"
+          width="1200"
+          height="675"
+        />
+        <figcaption>Trunk verification — <code>show interfaces trunk</code>.</figcaption>
       </figure>
 
       <figure>
-        <img src="assets/mediumbusiness/MB-SVIs.png" alt="Core switch output showing SVIs up/up" />
-        <figcaption>SVIs and routing - show ip interface brief.</figcaption>
+        <img
+          src="assets/mediumbusiness/MB-SVIs.png"
+          alt="show ip interface brief output confirming SVIs are up/up on the core switch"
+          loading="lazy"
+          width="1200"
+          height="675"
+        />
+        <figcaption>SVIs and routing — <code>show ip interface brief</code>.</figcaption>
       </figure>
 
       <figure>
-        <img src="assets/mediumbusiness/MB-ACLs.png" alt="ACL output showing rules and match counts" />
-        <figcaption>ACL enforcement proof - allow/deny rules with match counts.</figcaption>
+        <img
+          src="assets/mediumbusiness/MB-ACLs.png"
+          alt="show access-lists output showing permit and deny entries with match counters"
+          loading="lazy"
+          width="1200"
+          height="675"
+        />
+        <figcaption>ACL enforcement proof — <code>show access-lists</code> (match counts).</figcaption>
       </figure>
     </section>
 
     <section aria-labelledby="testing">
       <h2 id="testing">Validation</h2>
       <ul>
-        <li>DHCP leases issued correctly per VLAN (correct IP, gateway, DNS)</li>
-        <li>DNS resolution to intranet hostname and successful HTTP access</li>
-        <li>Guest blocked from internal resources while still receiving DHCP</li>
+        <li>DHCP leases issued correctly per VLAN (IP, gateway, DNS)</li>
+        <li>DNS resolves intranet hostname; HTTP to intranet succeeds</li>
+        <li>Guest receives DHCP but cannot access internal VLANs</li>
         <li>HR cannot reach Sales; HR can reach Finance</li>
         <li>Sales can reach Operations; other cross-department access restricted</li>
-        <li>Only IT can access management VLAN IPs</li>
+        <li>Only IT can access Management VLAN IPs</li>
       </ul>
     </section>
 
