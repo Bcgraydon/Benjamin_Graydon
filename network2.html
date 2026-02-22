@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Networking Project - Medium Business Network (Packet Tracer)</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Primary">
+      <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="resume.html">Resume</a>
+      <a class="pill" href="projects.html">Projects</a>
+    </nav>
+
+    <p class="actions">
+      <a class="btn secondary" href="projects.html">Back to Projects</a>
+    </p>
+
+    <h1>Medium Business Network - Packet Tracer Project</h1>
+  </header>
+
+  <main id="main">
+    <figure>
+      <img src="assets/mediumbusiness/MB-Topology.png" alt="Packet Tracer topology overview of the medium business network" />
+      <figcaption>Topology overview - Layer 3 core with three access switches and segmented department VLANs.</figcaption>
+    </figure>
+
+    <section aria-labelledby="overview">
+      <h2 id="overview">Overview</h2>
+      <p>
+        This Packet Tracer project models a medium-sized business network with multiple departments, each on its own VLAN.
+        Inter-VLAN routing is handled by a Layer 3 core switch using SVIs. Centralized services (DHCP, DNS, web, file) are hosted
+        on separate servers, and ACLs enforce segmentation with controlled cross-access between specific departments.
+      </p>
+    </section>
+
+    <section aria-labelledby="topology">
+      <h2 id="topology">Topology</h2>
+      <ul>
+        <li><strong>Core:</strong> Layer 3 switch (SVIs + ip routing)</li>
+        <li><strong>Access:</strong> 3 access switches (trunk uplinks, access ports per department)</li>
+        <li><strong>Edge:</strong> Router uplink for default route (optional internet simulation)</li>
+        <li><strong>Services:</strong> Separate DHCP, DNS, Web, and File servers</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="vlans">
+      <h2 id="vlans">VLANs and Addressing</h2>
+      <ul>
+        <li>VLAN 10 - HR - 10.10.10.0/24 (GW 10.10.10.1)</li>
+        <li>VLAN 20 - Finance - 10.10.20.0/24 (GW 10.10.20.1)</li>
+        <li>VLAN 30 - Sales - 10.10.30.0/24 (GW 10.10.30.1)</li>
+        <li>VLAN 40 - IT - 10.10.40.0/24 (GW 10.10.40.1)</li>
+        <li>VLAN 50 - Operations - 10.10.50.0/24 (GW 10.10.50.1)</li>
+        <li>VLAN 60 - Servers - 10.10.60.0/24 (GW 10.10.60.1)</li>
+        <li>VLAN 70 - Printers - 10.10.70.0/24 (GW 10.10.70.1)</li>
+        <li>VLAN 80 - Guest - 10.10.80.0/24 (GW 10.10.80.1)</li>
+        <li>VLAN 99 - Management - 10.10.99.0/24 (GW 10.10.99.1)</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="services">
+      <h2 id="services">Services</h2>
+      <ul>
+        <li><strong>DHCP Server:</strong> 10.10.60.10 (DHCP relay via ip helper-address on SVIs)</li>
+        <li><strong>DNS Server:</strong> 10.10.60.11</li>
+        <li><strong>Web Server (Intranet):</strong> 10.10.60.12</li>
+        <li><strong>File Server:</strong> 10.10.60.13</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="security">
+      <h2 id="security">Access Control and Segmentation</h2>
+      <ul>
+        <li><strong>Guest VLAN:</strong> blocked from internal VLANs; DHCP works via relay</li>
+        <li><strong>Management VLAN:</strong> only IT VLAN can access management IPs (ACL enforced on VLAN 99 outbound)</li>
+        <li><strong>Cross-access:</strong> HR ↔ Finance allowed; Sales ↔ Operations allowed</li>
+        <li><strong>Default segmentation:</strong> other inter-department access is restricted</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="screens">
+      <h2 id="screens">Screenshots</h2>
+
+      <figure>
+        <img src="assets/mediumbusiness/MB-VLANs.png" alt="Switch output showing VLAN configuration" />
+        <figcaption>VLAN verification - show vlan brief.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/mediumbusiness/MB-Trunks.png" alt="Switch output showing trunk configuration" />
+        <figcaption>Trunk verification - show interfaces trunk.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/mediumbusiness/MB-SVIs.png" alt="Core switch output showing SVIs up/up" />
+        <figcaption>SVIs and routing - show ip interface brief.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="assets/mediumbusiness/MB-ACLs.png" alt="ACL output showing rules and match counts" />
+        <figcaption>ACL enforcement proof - allow/deny rules with match counts.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="testing">
+      <h2 id="testing">Validation</h2>
+      <ul>
+        <li>DHCP leases issued correctly per VLAN (correct IP, gateway, DNS)</li>
+        <li>DNS resolution to intranet hostname and successful HTTP access</li>
+        <li>Guest blocked from internal resources while still receiving DHCP</li>
+        <li>HR cannot reach Sales; HR can reach Finance</li>
+        <li>Sales can reach Operations; other cross-department access restricted</li>
+        <li>Only IT can access management VLAN IPs</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="files">
+      <h2 id="files">Project File</h2>
+      <p class="actions">
+        <a class="btn" href="assets/mediumbusiness/MediumBusinessNetwork.pkt" download>
+          Download Packet Tracer File (.pkt)
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Benjamin Graydon</p>
+  </footer>
+</body>
+</html>
