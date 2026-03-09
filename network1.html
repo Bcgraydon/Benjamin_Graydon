@@ -12,6 +12,7 @@
   <header>
     <nav aria-label="Primary">
       <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="about.html">About</a>
       <a class="pill" href="resume.html">Resume</a>
       <a class="pill" href="projects.html">Projects</a>
     </nav>
@@ -41,10 +42,10 @@
       <h2 id="goals">Goals</h2>
       <ul>
         <li>Design a small business topology using switches, routers, and end devices.</li>
-        <li>Segment traffic using VLANs (separate departments and guest access).</li>
+        <li>Segment traffic using VLANs.</li>
         <li>Enable inter-VLAN routing and verify expected connectivity.</li>
         <li>Apply ACL rules to restrict access between VLANs while still allowing required services.</li>
-        <li>Test with ping and basic troubleshooting commands to confirm the network meets requirements.</li>
+        <li>Test with ping and troubleshooting commands to confirm requirements were met.</li>
       </ul>
     </section>
 
@@ -52,7 +53,7 @@
       <h2 id="topology">Topology and Components</h2>
       <ul>
         <li><strong>Switching:</strong> VLANs configured on access ports, trunk links where needed.</li>
-        <li><strong>Routing:</strong> Inter-VLAN routing (router-on-a-stick or Layer 3 interface) depending on the design.</li>
+        <li><strong>Routing:</strong> Inter-VLAN routing depending on the design.</li>
         <li><strong>Addressing:</strong> Separate subnet per VLAN with a default gateway per VLAN.</li>
         <li><strong>Security:</strong> ACLs to block unauthorized VLAN-to-VLAN traffic and isolate guests.</li>
       </ul>
@@ -62,12 +63,12 @@
       <h2 id="screens">Screenshots</h2>
 
       <figure>
-        <img src="assets/smallbusiness/SB-Vlan.png" alt="Switch output showing VLAN configuration (show vlan brief)" />
+        <img src="assets/smallbusiness/SB-Vlan.png" alt="Switch output showing VLAN configuration" />
         <figcaption>VLAN configuration proof - show vlan brief.</figcaption>
       </figure>
 
       <figure>
-        <img src="assets/smallbusiness/SB-Trunk.png" alt="Switch output showing trunk configuration (show interfaces trunk)" />
+        <img src="assets/smallbusiness/SB-Trunk.png" alt="Switch output showing trunk configuration" />
         <figcaption>Trunk proof - show interfaces trunk.</figcaption>
       </figure>
 
@@ -81,38 +82,37 @@
       <h2 id="testing">Testing and Validation</h2>
       <p>
         I validated the design by testing reachability within each VLAN and confirming that restricted traffic between VLANs
-        was blocked as intended. Troubleshooting was done using basic router and switch commands and reviewing configuration
-        output to confirm the network met the requirements.
+        was blocked as intended.
       </p>
       <ul>
         <li><strong>Connectivity:</strong> Verified hosts can reach their default gateway and required internal resources.</li>
         <li><strong>Segmentation:</strong> Confirmed VLAN separation at Layer 2.</li>
-        <li><strong>ACL policy:</strong> Confirmed blocked paths fail (expected) and allowed paths succeed (expected).</li>
-        <li><strong>Troubleshooting:</strong> Used show commands (interfaces, VLANs, trunks, access rules) to confirm configuration.</li>
+        <li><strong>ACL policy:</strong> Confirmed blocked paths fail and allowed paths succeed.</li>
+        <li><strong>Troubleshooting:</strong> Used show commands to confirm configuration.</li>
       </ul>
     </section>
 
     <section aria-labelledby="skills">
       <h2 id="skills">Skills Demonstrated</h2>
       <ul>
-        <li>VLAN planning and switch port configuration (access vs trunk)</li>
+        <li>VLAN planning and switch port configuration</li>
         <li>Subnetting and IP addressing</li>
         <li>Inter-VLAN routing concepts</li>
-        <li>ACL design and verification (least privilege, guest isolation)</li>
+        <li>ACL design and verification</li>
         <li>Network testing and troubleshooting using structured checks</li>
       </ul>
     </section>
 
     <section aria-labelledby="files">
-  <h2 id="files">Project Files</h2>
-  <p>Download the Packet Tracer project file below.</p>
+      <h2 id="files">Project Files</h2>
+      <p>Download the Packet Tracer project file below.</p>
 
-  <p class="actions">
-    <a class="btn" href="assets/smallbusiness/SmallBusiness_VLAN_RoAS_ACL.pkt" download>
-      Download Packet Tracer File (.pkt)
-    </a>
-  </p>
-</section>
+      <p class="actions">
+        <a class="btn" href="assets/smallbusiness/SmallBusiness_VLAN_RoAS_ACL.pkt" download>
+          Download Packet Tracer File (.pkt)
+        </a>
+      </p>
+    </section>
   </main>
 
   <footer>
