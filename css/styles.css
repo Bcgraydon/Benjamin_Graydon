@@ -234,3 +234,71 @@ footer {
   border-top: 1px solid #e5e7eb;
   margin-top: 2rem;
 }
+.about-hero {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .about-hero {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.about-hero-text h1 {
+  margin: 0 0 .35rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.eyebrow {
+  margin: 0 0 .35rem;
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #0b5fff;
+}
+
+.story-card {
+  background: #fafbfc;
+  border: 1px solid #e3e7eb;
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,.04);
+}
+
+.about-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 760px) {
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+}
+
+.info-block {
+  background: #fff;
+  border: 1px solid #e3e7eb;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+
+.info-block h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.lede {
+  font-size: 1.05rem;
+  color: #333;
+  max-width: 60ch;
+}
