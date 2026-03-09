@@ -12,6 +12,7 @@
   <header>
     <nav aria-label="Primary">
       <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="about.html">About</a>
       <a class="pill" href="resume.html">Resume</a>
       <a class="pill" href="projects.html">Projects</a>
     </nav>
@@ -35,27 +36,25 @@
         A standalone Java GUI that simulates an e-store ("Nile Dot Com"). Users search inventory,
         add up to five distinct items to a shopping cart, see a running subtotal, then check out to
         generate an invoice and append a transaction record. The app reads
-        <code>inventory.csv</code> (id, quoted description, in-stock status, quantity, unit price) and
-        appends order details to <code>transactions.csv</code> with a timestamp-based id.
+        <code>inventory.csv</code> and appends order details to <code>transactions.csv</code> with a timestamp-based ID.
       </p>
       <p>
         The main window includes labeled input areas, a live cart display, a running subtotal,
-        and six workflow buttons that enable/disable as the user progresses (search, add to cart,
-        delete last item, check out, clear/new order, exit).
+        and six workflow buttons that enable and disable as the user progresses through the order process.
       </p>
       <p>
-        Pricing and constraints: cart capacity <strong>5 items</strong>; tax <strong>6%</strong>;
-        tiered discounts per item - 1-4 (0%), 5-9 (10%), 10-14 (15%), 15+ (20%).
+        Pricing and constraints include a cart capacity of <strong>5 items</strong>, tax of <strong>6%</strong>,
+        and tiered discounts based on quantity.
       </p>
     </section>
 
     <section aria-labelledby="skills">
       <h2 id="skills">Skills Learned</h2>
       <ul>
-        <li>Event-driven programming with Java GUIs (listeners, state-driven UI)</li>
+        <li>Event-driven programming with Java GUIs</li>
         <li>CSV file I/O for inventory and transaction logs</li>
-        <li>Tax/discount calculations and currency formatting</li>
-        <li>Error dialogs and UX flow control (enable/disable actions)</li>
+        <li>Tax and discount calculations with formatted output</li>
+        <li>Error dialogs and user workflow control</li>
       </ul>
     </section>
   </main>
