@@ -12,6 +12,7 @@
   <header>
     <nav aria-label="Primary">
       <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="about.html">About</a>
       <a class="pill" href="resume.html">Resume</a>
       <a class="pill" href="projects.html">Projects</a>
     </nav>
@@ -25,32 +26,35 @@
 
   <main id="main">
     <figure>
-      <img src="assets/Bank-Sim.jpg" alt="Console output/diagram of the multithreaded Java banking simulator" width="480" />
-      <figcaption>Banking simulator with deposit/withdraw/transfer agents and auditors.</figcaption>
+      <img src="assets/Bank-Sim.jpg" alt="Console output or diagram of the multithreaded Java banking simulator" width="480" />
+      <figcaption>Banking simulator with deposit, withdraw, transfer agents, and auditors.</figcaption>
     </figure>
 
     <section aria-labelledby="desc">
       <h2 id="desc">Description</h2>
       <p>
-        A Java multithreaded simulation of a bank with two shared accounts and five agent types
+        A Java multithreaded simulation of a bank with two shared accounts and multiple agent types
         running concurrently: depositors, withdrawers, transfer agents, an internal auditor, and a
-        U.S. Treasury auditor. Access is synchronized with reentrant locks and conditions; withdrawers
-        block when funds are insufficient and are signaled after deposits. Transfers and audits acquire
-        multiple locks together for atomic operations; if locks aren’t available, agents back off and retry.
+        U.S. Treasury auditor.
+      </p>
+      <p>
+        Access is synchronized with reentrant locks and conditions. Withdrawers block when funds are
+        insufficient and are signaled after deposits. Transfers and audits acquire multiple locks together
+        for atomic operations, and agents back off and retry if locks are unavailable.
       </p>
       <p>
         The program uses a fixed thread pool to launch agents, randomized pacing to vary event timing,
-        and ordered console/log output for readability and auditing snapshots.
+        and ordered console or log output for readability and auditing snapshots.
       </p>
     </section>
 
     <section aria-labelledby="skills">
       <h2 id="skills">Skills Learned</h2>
       <ul>
-        <li>Designing cooperating, synchronized threads (producer/consumer patterns)</li>
-        <li>Using <code>ReentrantLock</code>, conditions (<code>await</code>/<code>signal</code>), and <code>tryLock</code></li>
-        <li>Atomic multi-resource operations with lock ordering (transfers, audit snapshots)</li>
-        <li>ExecutorService thread pools, pacing/jitter, and structured logging</li>
+        <li>Designing cooperating, synchronized threads</li>
+        <li>Using <code>ReentrantLock</code>, conditions, and <code>tryLock</code></li>
+        <li>Atomic multi-resource operations with lock ordering</li>
+        <li>ExecutorService thread pools and structured logging</li>
       </ul>
     </section>
   </main>
