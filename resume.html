@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Benjamin Graydon - Resume</title>
+  <title>Resume | Benjamin Graydon</title>
+  <meta name="description" content="Resume page for Benjamin Graydon with summary, education, experience, skills, and key technical projects." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -17,106 +18,115 @@
       <a class="pill" href="projects.html">Projects</a>
     </nav>
 
-    <div class="hero">
-      <div class="intro">
-        <h1>Benjamin Graydon</h1>
-        <p>
-          <a href="mailto:be773920@ucf.edu">be773920@ucf.edu</a> -
-          <a href="https://www.linkedin.com/in/benjamin-graydon-3b5562300/" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
-        <p class="actions">
-          <a class="btn" href="./assets/Graydon-resume.pdf" download="Benjamin-Graydon-Resume.pdf">Download Resume (PDF)</a>
-          <a class="btn secondary" href="./assets/Graydon-resume.pdf" target="_blank" rel="noopener">Open in Browser</a>
-        </p>
+    <div class="page-hero">
+      <p class="eyebrow">Resume Snapshot</p>
+      <h1>Benjamin Graydon</h1>
+      <p class="inline-meta">
+        <a href="mailto:be773920@ucf.edu">be773920@ucf.edu</a> |
+        <a href="https://www.linkedin.com/in/benjamin-graydon-3b5562300/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <div class="actions">
+        <a class="btn" href="./assets/Graydon-resume.pdf" download="Benjamin-Graydon-Resume.pdf">Download Resume (PDF)</a>
+        <a class="btn secondary" href="./assets/Graydon-resume.pdf" target="_blank" rel="noopener">Open PDF</a>
       </div>
     </div>
   </header>
 
   <main id="main">
     <section aria-labelledby="summary">
-      <h2 id="summary">Executive Summary</h2>
-      <p>
-        UCF Information Technology student and Marine veteran focused on entry-level IT operations, networking, and cybersecurity.
-        Building practical foundations through coursework and projects in Windows 10/11 and Microsoft 365 administration,
-        Active Directory / Entra ID account tasks, and core networking concepts such as VPN/Wi-Fi, DNS, DHCP, VLANs, routing,
-        and structured troubleshooting. Known for clear step-by-step documentation, disciplined procedures, and a hands-on
-        approach to solving technical problems.
-      </p>
+      <div class="section-card">
+        <h2 id="summary">Executive Summary</h2>
+        <p>
+          UCF Information Technology student with a Secure Computing and Networking minor and prior Marine Corps Reserve service.
+          Focused on entry-level IT, infrastructure, networking, and security-minded technical roles. Building practical experience through Linux administration,
+          home lab setup, Cisco Packet Tracer projects, structured troubleshooting, and clear technical documentation.
+        </p>
+      </div>
     </section>
 
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <article>
-        <h3>University of Central Florida - B.S. Information Technology</h3>
-        <p>Minor: Secure Computing and Networking - Aug 2024 - Present</p>
-      </article>
-      <article>
-        <h3>Gulf Coast State College - A.A. (transfer)</h3>
-        <p>Completed lower-division coursework prior to transfer.</p>
-      </article>
-    </section>
+    <section aria-labelledby="education-experience">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="education-experience">Education</h2>
+          <h3>University of Central Florida</h3>
+          <p><strong>B.S. Information Technology</strong></p>
+          <p>Minor: Secure Computing and Networking</p>
+          <p>Aug 2024 - Present</p>
 
-    <section aria-labelledby="experience">
-      <h2 id="experience">Experience</h2>
-      <article>
-        <h3>United States Marine Corps Reserves</h3>
-        <p>Role: (Primary) All-Source Intelligence Analyst, (Secondary) Ground Sensor Operator</p>
-        <p>Oct 2020 - Apr 2025</p>
-        <ul>
-          <li>Collected, reviewed, and summarized field information; produced concise briefings and maintained accurate records.</li>
-          <li>Planned and executed information-gathering tasks; improved handoffs with clear instructions.</li>
-          <li>Led an operations center tracking multiple missions; maintained accountability for 40 Marines and equipment.</li>
-          <li>Delivered briefings to senior leaders to improve situational awareness and decision-making.</li>
-          <li>Deployed and maintained ground sensor systems; documented troubleshooting to reduce time-to-fix.</li>
-        </ul>
-      </article>
-    </section>
+          <h3>Gulf Coast State College</h3>
+          <p><strong>Associate of Arts</strong></p>
+          <p>Completed lower-division coursework prior to transfer.</p>
+        </article>
 
-    <section aria-labelledby="projects">
-      <h2 id="projects">Academic Projects</h2>
-      <ul>
-        <li><strong>Nile Dot Com:</strong> simple event-driven e-commerce demo - <a href="project1.html">view project</a>.</li>
-        <li><strong>Banking Simulator:</strong> Java multithreaded bank with atomic transfers and audits - <a href="project2.html">view project</a>.</li>
-        <li><strong>Small Business Network:</strong> Packet Tracer lab with VLAN segmentation, trunks, and ACL policy testing - <a href="network1.html">view project</a>.</li>
-        <li><strong>Medium Business Network:</strong> Packet Tracer enterprise-style network with VLANs, SVIs, DHCP relay, and ACL segmentation - <a href="network2.html">view project</a>.</li>
-        <li><strong>Hines Project:</strong> Digitized, transcribed, and indexed WWII log books into a searchable archive with clear metadata and a simple browse/search view.</li>
-      </ul>
+        <article class="section-card">
+          <h2>Experience</h2>
+          <h3>United States Marine Corps Reserve</h3>
+          <p><strong>All-Source Intelligence Analyst / Ground Sensor Operator</strong></p>
+          <p>Oct 2020 - Apr 2025</p>
+          <ul class="clean-list">
+            <li>Maintained accurate records, summarized operational information, and supported structured reporting.</li>
+            <li>Delivered concise briefings and status updates to support decision-making.</li>
+            <li>Helped track mission activity, personnel accountability, and equipment status in an operations environment.</li>
+            <li>Applied disciplined procedures and clear handoffs in time-sensitive situations.</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section aria-labelledby="skills">
-      <h2 id="skills">Technical Skills</h2>
-      <ul>
-        <li><strong>Platforms and Admin:</strong> Active Directory / Entra ID, Microsoft 365</li>
-        <li><strong>Operating Systems:</strong> Windows 10/11, macOS, basic Linux</li>
-        <li><strong>Networking:</strong> TCP/IP, DNS, DHCP, VPN, Wi-Fi troubleshooting, VLANs, ACLs, routing fundamentals</li>
-        <li><strong>Security:</strong> SIEM/IDS concepts, MFA, least privilege, authentication security basics</li>
-        <li><strong>Endpoint:</strong> Intune/SCCM basics, BitLocker, peripherals</li>
-        <li><strong>Tools:</strong> Wireshark, Packet Tracer, Nmap, Hydra, Event Viewer, Git, Excel</li>
-      </ul>
+      <div class="section-card">
+        <h2 id="skills">Technical Skills</h2>
+        <div class="grid-2">
+          <div>
+            <p><strong>Systems:</strong> Windows, Ubuntu Server, Linux command line, Webmin, Samba, UFW</p>
+            <p><strong>Networking:</strong> TCP/IP, VLANs, ACLs, DNS, DHCP, subnetting, routing fundamentals</p>
+            <p><strong>Security / Analysis:</strong> Nmap, Hydra, Wireshark, least privilege and authentication concepts</p>
+          </div>
+          <div>
+            <p><strong>Programming:</strong> Java, Python, C, SQL</p>
+            <p><strong>Tools:</strong> Cisco Packet Tracer, Git, Excel, virtualization platforms</p>
+            <p><strong>Strengths:</strong> Troubleshooting, documentation, process discipline, technical communication</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section aria-labelledby="coursework">
-      <h2 id="coursework">Relevant Coursework</h2>
-      <ul>
-        <li>Secure Computing and Networking (Minor)</li>
-        <li>Systems Administration / Operating Systems</li>
-        <li>Network Fundamentals</li>
-        <li>Programming (C/Java)</li>
-      </ul>
+    <section aria-labelledby="projects">
+      <div class="section-card">
+        <h2 id="projects">Selected Projects</h2>
+        <ul class="clean-list">
+          <li><strong>Home Lab Server / NAS:</strong> Repurposed laptop hardware into an Ubuntu home lab server with Webmin, Samba file sharing, and UFW firewall configuration - <a href="homelab.html">view project</a>.</li>
+          <li><strong>Medium Business Network:</strong> Packet Tracer network with VLANs, SVIs, DHCP relay, and ACL segmentation - <a href="network2.html">view project</a>.</li>
+          <li><strong>Small Business Network:</strong> Packet Tracer lab with VLAN segmentation, trunks, and ACL policy testing - <a href="network1.html">view project</a>.</li>
+          <li><strong>Banking Simulator:</strong> Java multithreaded bank with synchronized transfers and audits - <a href="project2.html">view project</a>.</li>
+          <li><strong>Nile Dot Com:</strong> Event-driven Java GUI with inventory, cart, and transaction logging - <a href="project1.html">view project</a>.</li>
+          <li><strong>Project Hines:</strong> Ongoing OCR-based digitization workflow for WWII flight logbooks - <a href="hines.html">view project</a>.</li>
+        </ul>
+      </div>
     </section>
 
-    <section aria-labelledby="awards">
-      <h2 id="awards">Awards</h2>
-      <ul>
-        <li>Dean’s List - <time datetime="2024-12">Fall 2024</time></li>
-        <li>Dean’s List - <time datetime="2025-05">Spring 2025</time></li>
-        <li>Dean’s List - <time datetime="2025-12">Fall 2025</time></li>
-      </ul>
-    </section>
+    <section aria-labelledby="coursework-awards">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="coursework-awards">Relevant Coursework</h2>
+          <ul class="clean-list">
+            <li>Secure Computing and Networking</li>
+            <li>Operating Systems / Systems Administration</li>
+            <li>Computer Network Concepts</li>
+            <li>Computer Security</li>
+            <li>Programming in Java and C</li>
+          </ul>
+        </article>
 
-    <section aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <p>Email: <a href="mailto:be773920@ucf.edu">be773920@ucf.edu</a></p>
+        <article class="section-card">
+          <h2>Awards</h2>
+          <ul class="clean-list">
+            <li>Dean’s List - Fall 2024</li>
+            <li>Dean’s List - Spring 2025</li>
+            <li>Dean’s List - Fall 2025</li>
+          </ul>
+        </article>
+      </div>
     </section>
   </main>
 
