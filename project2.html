@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Project 2 - Synchronized/Cooperating Threads: Banking Simulator</title>
+  <title>Banking Simulator | Benjamin Graydon</title>
+  <meta name="description" content="Java multithreaded banking simulator project by Benjamin Graydon." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -21,44 +22,131 @@
       <a class="btn secondary" href="projects.html">Back to Projects</a>
     </p>
 
-    <h1>Project 2 - Synchronized/Cooperating Threads: Banking Simulator</h1>
+    <div class="page-hero">
+      <p class="eyebrow">Programming Project</p>
+      <h1>Banking Simulator - Multithreading / Synchronization</h1>
+      <p class="lede">
+        A Java banking simulation built to model concurrent transfers, shared account access,
+        synchronization, and audit-style reporting in a multithreaded environment.
+      </p>
+    </div>
   </header>
 
   <main id="main">
-    <figure>
-      <img src="assets/Bank-Sim.jpg" alt="Console output or diagram of the multithreaded Java banking simulator" width="480" />
-      <figcaption>Banking simulator with deposit, withdraw, transfer agents, and auditors.</figcaption>
-    </figure>
+    <section aria-labelledby="overview">
+      <div class="section-card">
+        <h2 id="overview">Overview</h2>
+        <p>
+          This project simulates a banking system where multiple threads interact with shared account data at the same time.
+          The main challenge was making sure transfers remained correct and consistent even when many operations were happening concurrently.
+        </p>
+        <p>
+          Instead of treating it like a simple balance calculator, I approached it like a controlled concurrency problem.
+          That meant thinking about lock ordering, synchronization, shared state, and how to prevent race conditions while still allowing realistic transaction activity.
+        </p>
+      </div>
+    </section>
 
-    <section aria-labelledby="desc">
-      <h2 id="desc">Description</h2>
-      <p>
-        A Java multithreaded simulation of a bank with two shared accounts and multiple agent types
-        running concurrently: depositors, withdrawers, transfer agents, an internal auditor, and a
-        U.S. Treasury auditor.
-      </p>
-      <p>
-        Access is synchronized with reentrant locks and conditions. Withdrawers block when funds are
-        insufficient and are signaled after deposits. Transfers and audits acquire multiple locks together
-        for atomic operations, and agents back off and retry if locks are unavailable.
-      </p>
-      <p>
-        The program uses a fixed thread pool to launch agents, randomized pacing to vary event timing,
-        and ordered console or log output for readability and auditing snapshots.
-      </p>
+    <section aria-labelledby="technologies">
+      <div class="section-card">
+        <h2 id="technologies">Technologies Used</h2>
+        <ul class="tag-list">
+          <li>Java</li>
+          <li>Multithreading</li>
+          <li>Synchronization</li>
+          <li>Locks</li>
+          <li>Concurrent Programming</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="features">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="features">Core Features</h2>
+          <ul class="clean-list">
+            <li>Multiple simulated bank accounts with changing balances</li>
+            <li>Concurrent transfer operations between accounts</li>
+            <li>Synchronization to protect shared resources</li>
+            <li>Lock ordering to reduce the risk of deadlock</li>
+            <li>Audit-style snapshots and transaction visibility</li>
+            <li>Controlled thread behavior for repeatable testing</li>
+          </ul>
+        </article>
+
+        <article class="section-card">
+          <h2>What This Project Demonstrates</h2>
+          <ul class="clean-list">
+            <li>Reasoning about thread safety in Java</li>
+            <li>Protecting shared data with synchronized access</li>
+            <li>Designing around race conditions and inconsistent state</li>
+            <li>Building a simulation that reflects real coordination problems</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="design">
+      <div class="section-card">
+        <h2 id="design">Design Focus</h2>
+        <p>
+          The most important part of this project was making sure money movement stayed valid under concurrency.
+          That required careful handling of account access so two threads could not corrupt balances by reading or writing at the wrong time.
+        </p>
+        <p>
+          I also had to think through how to represent transactions clearly enough that the output remained understandable.
+          A concurrency project can be technically correct but still hard to follow, so part of the work was making the behavior visible through structured output and audit information.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="screenshot">
+      <div class="section-card">
+        <h2 id="screenshot">Project Screenshot</h2>
+        <figure>
+          <img src="assets/Bank-Sim.jpg" alt="Output from the Java banking simulator project" />
+          <figcaption>Example output from the banking simulator showing synchronized transaction activity.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="challenges">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="challenges">Challenges</h2>
+          <p>
+            The hardest part of this project was not just writing multithreaded code, but writing it in a way that stayed predictable enough to verify.
+            Concurrent code can fail in ways that are hard to reproduce, so I had to be careful about structure, ordering, and visibility.
+          </p>
+        </article>
+
+        <article class="section-card">
+          <h2>What I Learned</h2>
+          <p>
+            This project gave me a stronger understanding of how synchronization works in practice, why uncontrolled shared state is dangerous,
+            and how small design decisions can have major effects on correctness in concurrent systems.
+          </p>
+        </article>
+      </div>
     </section>
 
     <section aria-labelledby="skills">
-      <h2 id="skills">Skills Learned</h2>
-      <ul>
-        <li>Designing cooperating, synchronized threads</li>
-        <li>Using <code>ReentrantLock</code>, conditions, and <code>tryLock</code></li>
-        <li>Atomic multi-resource operations with lock ordering</li>
-        <li>ExecutorService thread pools and structured logging</li>
-      </ul>
+      <div class="section-card">
+        <h2 id="skills">Skills Demonstrated</h2>
+        <ul class="tag-list">
+          <li>Java</li>
+          <li>Threads</li>
+          <li>Synchronization</li>
+          <li>Lock Ordering</li>
+          <li>Race Condition Prevention</li>
+          <li>Audit Visibility</li>
+        </ul>
+      </div>
     </section>
   </main>
 
-  <footer><p>&copy; 2026 Benjamin Graydon</p></footer>
+  <footer>
+    <p>&copy; 2026 Benjamin Graydon</p>
+  </footer>
 </body>
 </html>
