@@ -17,11 +17,11 @@
       <a class="pill" href="resume.html">Resume</a>
       <a class="pill" href="projects.html">Projects</a>
       <button id="theme-toggle" class="pill theme-toggle" type="button" aria-label="Toggle light and dark mode">
-  Light Mode
-</button>
+        Light Mode
+      </button>
     </nav>
 
-    <div class="page-hero split">
+    <div class="page-hero">
       <div>
         <p class="eyebrow">About Me</p>
         <h1>Curious about how systems work, motivated to learn by building them.</h1>
@@ -29,7 +29,6 @@
           I am a UCF Information Technology student with a Secure Computing and Networking minor, focused on practical technical work in IT, networking, Linux systems, and security-minded troubleshooting.
         </p>
       </div>
-      <img src="assets/HeadShot.jpg" alt="Benjamin Graydon headshot" class="headshot" width="220" height="220" />
     </div>
   </header>
 
@@ -79,35 +78,36 @@
   <footer>
     <p>&copy; 2026 Benjamin Graydon</p>
   </footer>
+
   <script>
-  (function () {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const body = document.body;
-    const toggleButton = document.getElementById("theme-toggle");
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      const body = document.body;
+      const toggleButton = document.getElementById("theme-toggle");
 
-    if (savedTheme === "light" || (!savedTheme && prefersLight)) {
-      body.classList.add("light-mode");
-    }
+      if (savedTheme === "light" || (!savedTheme && prefersLight)) {
+        body.classList.add("light-mode");
+      }
 
-    function updateButtonText() {
-      if (!toggleButton) return;
-      toggleButton.textContent = body.classList.contains("light-mode")
-        ? "Dark Mode"
-        : "Light Mode";
-    }
+      function updateButtonText() {
+        if (!toggleButton) return;
+        toggleButton.textContent = body.classList.contains("light-mode")
+          ? "Dark Mode"
+          : "Light Mode";
+      }
 
-    updateButtonText();
+      updateButtonText();
 
-    if (toggleButton) {
-      toggleButton.addEventListener("click", function () {
-        body.classList.toggle("light-mode");
-        const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
-        localStorage.setItem("theme", currentTheme);
-        updateButtonText();
-      });
-    }
-  })();
-</script>
+      if (toggleButton) {
+        toggleButton.addEventListener("click", function () {
+          body.classList.toggle("light-mode");
+          const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
+          localStorage.setItem("theme", currentTheme);
+          updateButtonText();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
