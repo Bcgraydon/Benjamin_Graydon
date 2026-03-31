@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Networking Project - Small Business Network (Packet Tracer)</title>
+  <title>Small Business Network | Benjamin Graydon</title>
+  <meta name="description" content="Small business Packet Tracer network project by Benjamin Graydon." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -21,97 +22,117 @@
       <a class="btn secondary" href="projects.html">Back to Projects</a>
     </p>
 
-    <h1>Small Business Network - Packet Tracer Project</h1>
+    <div class="page-hero">
+      <p class="eyebrow">Networking Project</p>
+      <h1>Small Business Network - Packet Tracer</h1>
+      <p class="lede">
+        A segmented small-office network designed in Cisco Packet Tracer with VLANs, trunks,
+        inter-VLAN routing, and access control validation through structured testing.
+      </p>
+    </div>
   </header>
 
   <main id="main">
-    <figure>
-      <img src="assets/smallbusiness/SB-Topology.png" alt="Packet Tracer topology overview of the small business network" />
-      <figcaption>Topology overview - segmented small business network built in Cisco Packet Tracer.</figcaption>
-    </figure>
-
     <section aria-labelledby="overview">
-      <h2 id="overview">Overview</h2>
-      <p>
-        This project is a small business network built in Cisco Packet Tracer. The goal was to design a realistic,
-        segmented network with basic security controls, then validate connectivity and document testing results.
-      </p>
-    </section>
-
-    <section aria-labelledby="goals">
-      <h2 id="goals">Goals</h2>
-      <ul>
-        <li>Design a small business topology using switches, routers, and end devices.</li>
-        <li>Segment traffic using VLANs.</li>
-        <li>Enable inter-VLAN routing and verify expected connectivity.</li>
-        <li>Apply ACL rules to restrict access between VLANs while still allowing required services.</li>
-        <li>Test with ping and troubleshooting commands to confirm requirements were met.</li>
-      </ul>
+      <div class="section-card">
+        <h2 id="overview">Overview</h2>
+        <p>
+          This project models a small business network that needs better organization, separation between departments,
+          and more controlled communication across the environment. I used Cisco Packet Tracer to design the topology,
+          assign VLANs, configure trunks, and enable communication between networks where appropriate.
+        </p>
+        <p>
+          The goal was not just to make devices ping each other. It was to show that I understand how segmentation,
+          routing, and policy work together in a practical small-business environment.
+        </p>
+      </div>
     </section>
 
     <section aria-labelledby="topology">
-      <h2 id="topology">Topology and Components</h2>
-      <ul>
-        <li><strong>Switching:</strong> VLANs configured on access ports, trunk links where needed.</li>
-        <li><strong>Routing:</strong> Inter-VLAN routing depending on the design.</li>
-        <li><strong>Addressing:</strong> Separate subnet per VLAN with a default gateway per VLAN.</li>
-        <li><strong>Security:</strong> ACLs to block unauthorized VLAN-to-VLAN traffic and isolate guests.</li>
-      </ul>
+      <div class="section-card">
+        <h2 id="topology">Topology</h2>
+        <figure>
+          <img src="assets/smallbusiness/SB-Topology.png" alt="Topology diagram for the small business Packet Tracer network" />
+          <figcaption>Small business network topology built in Cisco Packet Tracer.</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section aria-labelledby="screens">
-      <h2 id="screens">Screenshots</h2>
+    <section aria-labelledby="design-goals">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="design-goals">Design Goals</h2>
+          <ul class="clean-list">
+            <li>Separate departments into their own VLANs</li>
+            <li>Use trunk links correctly between network devices</li>
+            <li>Enable inter-VLAN communication where needed</li>
+            <li>Apply ACLs to control unnecessary access</li>
+            <li>Verify connectivity with testing instead of assumptions</li>
+          </ul>
+        </article>
 
-      <figure>
-        <img src="assets/smallbusiness/SB-Vlan.png" alt="Switch output showing VLAN configuration" />
-        <figcaption>VLAN configuration proof - show vlan brief.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="assets/smallbusiness/SB-Trunk.png" alt="Switch output showing trunk configuration" />
-        <figcaption>Trunk proof - show interfaces trunk.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="assets/smallbusiness/SB-AC.png" alt="ACL rules and matches showing traffic filtering" />
-        <figcaption>ACL proof - rules and match counts.</figcaption>
-      </figure>
+        <article class="section-card">
+          <h2>Technologies Used</h2>
+          <ul class="tag-list">
+            <li>Cisco Packet Tracer</li>
+            <li>VLANs</li>
+            <li>802.1Q Trunks</li>
+            <li>Inter-VLAN Routing</li>
+            <li>ACLs</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
-    <section aria-labelledby="testing">
-      <h2 id="testing">Testing and Validation</h2>
-      <p>
-        I validated the design by testing reachability within each VLAN and confirming that restricted traffic between VLANs
-        was blocked as intended.
-      </p>
-      <ul>
-        <li><strong>Connectivity:</strong> Verified hosts can reach their default gateway and required internal resources.</li>
-        <li><strong>Segmentation:</strong> Confirmed VLAN separation at Layer 2.</li>
-        <li><strong>ACL policy:</strong> Confirmed blocked paths fail and allowed paths succeed.</li>
-        <li><strong>Troubleshooting:</strong> Used show commands to confirm configuration.</li>
-      </ul>
+    <section aria-labelledby="implementation">
+      <div class="section-card">
+        <h2 id="implementation">Implementation</h2>
+        <p>
+          I configured VLAN assignments for the different user groups, set up trunk links so multiple VLANs could traverse shared connections,
+          and used routing to allow communication between networks that needed it. From there, I tested the design to confirm that permitted traffic worked
+          and restricted traffic was blocked where expected.
+        </p>
+        <p>
+          This project helped reinforce the relationship between Layer 2 segmentation and Layer 3 policy.
+          It also gave me a better feel for how switchport roles, VLAN membership, and routing decisions affect end-user connectivity.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="validation">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="validation">What I Validated</h2>
+          <ul class="clean-list">
+            <li>Correct VLAN membership on switch ports</li>
+            <li>Proper trunk behavior between network devices</li>
+            <li>Expected gateway reachability</li>
+            <li>Allowed and denied traffic according to policy</li>
+            <li>End-to-end device communication across the topology</li>
+          </ul>
+        </article>
+
+        <article class="section-card">
+          <h2>What I Learned</h2>
+          <p>
+            This project improved my understanding of segmentation, basic policy enforcement, and how to troubleshoot communication issues by checking the network in layers instead of guessing.
+          </p>
+        </article>
+      </div>
     </section>
 
     <section aria-labelledby="skills">
-      <h2 id="skills">Skills Demonstrated</h2>
-      <ul>
-        <li>VLAN planning and switch port configuration</li>
-        <li>Subnetting and IP addressing</li>
-        <li>Inter-VLAN routing concepts</li>
-        <li>ACL design and verification</li>
-        <li>Network testing and troubleshooting using structured checks</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="files">
-      <h2 id="files">Project Files</h2>
-      <p>Download the Packet Tracer project file below.</p>
-
-      <p class="actions">
-        <a class="btn" href="assets/smallbusiness/SmallBusiness_VLAN_RoAS_ACL.pkt" download>
-          Download Packet Tracer File (.pkt)
-        </a>
-      </p>
+      <div class="section-card">
+        <h2 id="skills">Skills Demonstrated</h2>
+        <ul class="tag-list">
+          <li>Network Segmentation</li>
+          <li>VLAN Configuration</li>
+          <li>Trunking</li>
+          <li>Inter-VLAN Routing</li>
+          <li>ACL Validation</li>
+          <li>Packet Tracer</li>
+        </ul>
+      </div>
     </section>
   </main>
 
