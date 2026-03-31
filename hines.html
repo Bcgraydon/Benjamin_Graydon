@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Hines | Benjamin Graydon</title>
+  <meta name="description" content="Overview of Project Hines, an OCR-based WWII flight logbook digitization project." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Primary">
+      <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="resume.html">Resume</a>
+      <a class="pill" href="projects.html">Projects</a>
+    </nav>
+
+    <p class="actions">
+      <a class="btn secondary" href="projects.html">Back to Projects</a>
+    </p>
+
+    <div class="page-hero">
+      <p class="eyebrow">Digitization Project</p>
+      <h1>Project Hines - WWII Flight Logbook Digitization</h1>
+      <p class="lede">
+        An ongoing project focused on turning handwritten WWII flight logbooks into structured, searchable digital records.
+      </p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="overview">
+      <div class="section-card">
+        <h2 id="overview">Overview</h2>
+        <p>
+          Project Hines is a personal archival project built around scanned historical logbooks. The goal is to create a workflow that can take handwritten records,
+          extract the important information, organize it into a structured format, and make the final archive easier to search, browse, and preserve.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="pipeline">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="pipeline">Planned Workflow</h2>
+          <ul class="clean-list">
+            <li>Preprocess scanned pages to improve readability</li>
+            <li>Use OCR to extract handwritten text where possible</li>
+            <li>Prompt for manual review when handwriting is unclear</li>
+            <li>Transform extracted data into a structured spreadsheet or searchable dataset</li>
+            <li>Preserve metadata so records remain understandable and navigable</li>
+          </ul>
+        </article>
+
+        <article class="section-card">
+          <h2>Tools and Direction</h2>
+          <p>Current direction includes a zero-cost Python-based workflow on Windows using tools such as OpenCV, Tesseract, and pandas, with optional OCR model fallbacks for harder handwriting.</p>
+          <ul class="tag-list">
+            <li>Python</li>
+            <li>OpenCV</li>
+            <li>Tesseract</li>
+            <li>pandas</li>
+            <li>OCR</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="why-it-matters">
+      <div class="section-card">
+        <h2 id="why-it-matters">Why This Project Matters</h2>
+        <p>
+          What makes this project meaningful to me is that it combines technical problem solving with preservation. It is not just about OCR in the abstract.
+          It is about taking difficult, inconsistent historical material and building a workflow that makes the information more accessible without losing context.
+        </p>
+        <p>
+          From a technical perspective, it also pushes me to think about preprocessing, imperfect data, human review, structured output, and how to design a system that is useful even when automation is not perfect.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="status">
+      <div class="section-card">
+        <h2 id="status">Current Status</h2>
+        <p>
+          This is an active project, and the write-up will grow as the pipeline becomes more complete. I am keeping it on the portfolio because it reflects the kind of long-form, real-world technical work I want to keep building: practical, iterative, and useful beyond the classroom.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Benjamin Graydon</p>
+  </footer>
+</body>
+</html>
