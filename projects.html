@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Benjamin Graydon - Projects</title>
+  <title>Projects | Benjamin Graydon</title>
+  <meta name="description" content="Selected programming, networking, systems, and digitization projects by Benjamin Graydon." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -16,46 +17,135 @@
       <a class="pill" href="resume.html">Resume</a>
       <a class="pill" href="projects.html" aria-current="page">Projects</a>
     </nav>
-    <h1>Projects</h1>
-    <p class="lede">Selected work in programming, networking, and security-focused lab environments.</p>
+
+    <div class="page-hero">
+      <p class="eyebrow">Portfolio Projects</p>
+      <h1>Programming, networking, systems, and documentation-focused work.</h1>
+      <p class="lede">
+        These projects reflect the kind of work I enjoy most: building practical solutions, validating that they work,
+        and documenting them clearly enough that someone else can understand the design, the process, and the result.
+      </p>
+    </div>
   </header>
 
   <main id="main">
-    <section aria-labelledby="programming">
-      <h2 id="programming">Programming Projects</h2>
-
-      <div class="project-block">
-        <p><strong>Nile Dot Com - Event-Driven Java GUI</strong></p>
-        <p>Java GUI e-store simulation with cart, discounts, inventory processing, and transaction logging.</p>
-        <p class="actions"><a class="btn" href="project1.html">View Project</a></p>
-      </div>
-
-      <div class="project-block">
-        <p><strong>Banking Simulator - Multithreading / Synchronization</strong></p>
-        <p>Java multithreaded bank with atomic transfers, lock ordering, coordinated threads, and audit snapshots.</p>
-        <p class="actions"><a class="btn" href="project2.html">View Project</a></p>
-      </div>
-
-      <div class="project-block">
-        <p><strong>Hines Project - WWII Logbook Digitization</strong></p>
-        <p>Digitized, transcribed, and indexed WWII logbooks into a searchable archive with metadata and a browse/search view.</p>
-        <p><em>Write-up coming soon.</em></p>
+    <section aria-labelledby="systems-projects">
+      <h2 id="systems-projects">Systems / Home Lab Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/homelab/hardware-final.jpeg" alt="Repurposed laptop hardware used to build the home lab server" />
+          </div>
+          <div class="card-body">
+            <h3>Home Lab Server / NAS from Repurposed Laptop Hardware</h3>
+            <p>Built a practical Ubuntu home lab server from old laptop parts, switched from CasaOS to Webmin for more direct administration, and configured Samba-based shared storage with client-side Windows access.</p>
+            <ul class="tag-list">
+              <li>Ubuntu Server</li>
+              <li>Webmin</li>
+              <li>Samba</li>
+              <li>UFW</li>
+              <li>Hardware Repurposing</li>
+            </ul>
+            <p class="actions"><a class="btn" href="homelab.html">View Project</a></p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section aria-labelledby="networking">
-      <h2 id="networking">Networking Projects</h2>
+    <section aria-labelledby="programming-projects">
+      <h2 id="programming-projects">Programming Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/Event-Driven.jpg" alt="Java GUI for Nile Dot Com project" />
+          </div>
+          <div class="card-body">
+            <h3>Nile Dot Com - Event-Driven Java GUI</h3>
+            <p>Java e-commerce simulation with inventory lookups, cart management, discounts, invoice generation, and transaction logging through a guided user workflow.</p>
+            <ul class="tag-list">
+              <li>Java</li>
+              <li>GUI</li>
+              <li>CSV I/O</li>
+              <li>Event-Driven Design</li>
+            </ul>
+            <p class="actions"><a class="btn" href="project1.html">View Project</a></p>
+          </div>
+        </article>
 
-      <div class="project-block">
-        <p><strong>Small Business Network - Packet Tracer Project</strong></p>
-        <p>Small business network design with VLAN segmentation, inter-VLAN routing, and ACL policy testing.</p>
-        <p class="actions"><a class="btn" href="network1.html">View Project</a></p>
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/Bank-Sim.jpg" alt="Java multithreaded banking simulator output" />
+          </div>
+          <div class="card-body">
+            <h3>Banking Simulator - Multithreading / Synchronization</h3>
+            <p>Concurrent bank simulation that emphasizes coordinated threads, lock ordering, atomic account operations, and audit visibility.</p>
+            <ul class="tag-list">
+              <li>Java</li>
+              <li>Threads</li>
+              <li>Locks</li>
+              <li>Concurrency</li>
+            </ul>
+            <p class="actions"><a class="btn" href="project2.html">View Project</a></p>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="project-block">
-        <p><strong>Medium Business Network - Layer 3 Core, VLAN Segmentation, DHCP Relay, and ACL Policy</strong></p>
-        <p>Multi-department VLAN design using SVIs on a Layer 3 core, DHCP relay, DNS/web services, and inter-VLAN access control.</p>
-        <p class="actions"><a class="btn" href="network2.html">View Project</a></p>
+    <section aria-labelledby="networking-projects">
+      <h2 id="networking-projects">Networking Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/smallbusiness/SB-Topology.png" alt="Topology of the small business Packet Tracer network" />
+          </div>
+          <div class="card-body">
+            <h3>Small Business Network - Packet Tracer</h3>
+            <p>Segmented small office design with VLANs, trunks, inter-VLAN routing, and ACL verification through structured testing.</p>
+            <ul class="tag-list">
+              <li>Packet Tracer</li>
+              <li>VLANs</li>
+              <li>ACLs</li>
+              <li>Routing</li>
+            </ul>
+            <p class="actions"><a class="btn" href="network1.html">View Project</a></p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/mediumbusiness/MB-Topology.png" alt="Topology of the medium business Packet Tracer network" />
+          </div>
+          <div class="card-body">
+            <h3>Medium Business Network - Layer 3 Core and ACL Policy</h3>
+            <p>Multi-department network design with SVIs, centralized services, DHCP relay, guest isolation, and policy-based inter-VLAN access control.</p>
+            <ul class="tag-list">
+              <li>SVIs</li>
+              <li>DHCP Relay</li>
+              <li>ACLs</li>
+              <li>Segmentation</li>
+            </ul>
+            <p class="actions"><a class="btn" href="network2.html">View Project</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="other-projects">
+      <h2 id="other-projects">Research / Digitization Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-body">
+            <h3>Project Hines - WWII Logbook Digitization</h3>
+            <p>An ongoing archival project focused on converting handwritten WWII flight logbooks into structured, searchable digital records.</p>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>OCR</li>
+              <li>Data Extraction</li>
+              <li>Metadata Design</li>
+            </ul>
+            <p class="actions"><a class="btn" href="hines.html">View Project</a></p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
