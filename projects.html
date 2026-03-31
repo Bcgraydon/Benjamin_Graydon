@@ -16,6 +16,9 @@
       <a class="pill" href="about.html">About</a>
       <a class="pill" href="resume.html">Resume</a>
       <a class="pill" href="projects.html" aria-current="page">Projects</a>
+      <button id="theme-toggle" class="pill theme-toggle" type="button" aria-label="Toggle light and dark mode">
+  Light Mode
+</button>
     </nav>
 
     <div class="page-hero">
@@ -153,5 +156,35 @@
   <footer>
     <p>&copy; 2026 Benjamin Graydon</p>
   </footer>
+  <script>
+  (function () {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const body = document.body;
+    const toggleButton = document.getElementById("theme-toggle");
+
+    if (savedTheme === "light" || (!savedTheme && prefersLight)) {
+      body.classList.add("light-mode");
+    }
+
+    function updateButtonText() {
+      if (!toggleButton) return;
+      toggleButton.textContent = body.classList.contains("light-mode")
+        ? "Dark Mode"
+        : "Light Mode";
+    }
+
+    updateButtonText();
+
+    if (toggleButton) {
+      toggleButton.addEventListener("click", function () {
+        body.classList.toggle("light-mode");
+        const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
+        localStorage.setItem("theme", currentTheme);
+        updateButtonText();
+      });
+    }
+  })();
+</script>
 </body>
 </html>
