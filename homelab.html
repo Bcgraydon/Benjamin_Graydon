@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home Lab Server / NAS | Benjamin Graydon</title>
+  <meta name="description" content="Repurposed-laptop home lab server and NAS project using Ubuntu Server, Webmin, Samba, and UFW firewall rules." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Primary">
+      <a class="pill" href="index.html">Home</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="resume.html">Resume</a>
+      <a class="pill" href="projects.html">Projects</a>
+    </nav>
+
+    <p class="actions">
+      <a class="btn secondary" href="projects.html">Back to Projects</a>
+    </p>
+
+    <div class="page-hero">
+      <p class="eyebrow">Systems / Home Lab Project</p>
+      <h1>Home Lab Server / NAS from Repurposed Laptop Hardware</h1>
+      <p class="lede">
+        I combined parts from two old laptops into one functioning Ubuntu-based server with 16 GB of RAM, a 500 GB NVMe drive for the OS,
+        and a 1 TB hard drive for shared storage. I first tried CasaOS, then intentionally switched to Webmin because it exposed more of the system and gave me a more hands-on learning experience.
+      </p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="overview">
+      <div class="section-card">
+        <h2 id="overview">Overview</h2>
+        <p>
+          This project started as an attempt to turn unused hardware into something practical. Instead of buying dedicated server hardware,
+          I reused old laptops to build a lightweight home lab platform that could serve two purposes: give me a Linux administration environment to learn on,
+          and provide network-attached storage for my local network.
+        </p>
+        <div class="metrics">
+          <div class="metric"><strong>16 GB</strong><span>RAM installed</span></div>
+          <div class="metric"><strong>500 GB</strong><span>NVMe drive for OS</span></div>
+          <div class="metric"><strong>1 TB</strong><span>HDD for shared storage</span></div>
+          <div class="metric"><strong>Ubuntu + Webmin</strong><span>management stack</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="hardware">
+      <h2 id="hardware">Hardware Repurposing</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="assets/homelab/hardware-final.jpeg" alt="Final repurposed laptop hardware with RAM and storage installed" />
+          <figcaption>The final base system after repurposing parts from old laptops into one working machine.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/homelab/hardware-donor.jpeg" alt="Donor laptop hardware used during the repurposing process" />
+          <figcaption>One of the donor systems used to make the final home lab build possible.</figcaption>
+        </figure>
+      </div>
+      <div class="section-card">
+        <p class="no-top-margin">
+          Reusing the hardware gave me experience beyond software setup. It required me to think through what components were still usable,
+          how to combine them into one functional machine, and how to turn limited hardware into a practical home server instead of leaving it unused.
+        </p>
+      </div>
+    </section>
+
+    <section aria-labelledby="management">
+      <h2 id="management">CasaOS to Webmin</h2>
+      <div class="grid-2">
+        <figure>
+          <img src="assets/homelab/casaos-dashboard.png" alt="CasaOS dashboard running on the home lab server" />
+          <figcaption>Initial CasaOS setup used to evaluate a more dashboard-focused management approach.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/homelab/casaos-removal.png" alt="Terminal output showing CasaOS removal from the server" />
+          <figcaption>Removing CasaOS after deciding to use a more barebones administration tool.</figcaption>
+        </figure>
+      </div>
+      <div class="section-card">
+        <p>
+          I initially installed CasaOS because it offered a quick, polished dashboard experience. After testing it, I decided to remove it and switch to Webmin.
+          That change was intentional. Webmin felt more barebones and closer to the actual system, which made it a better fit for learning Linux administration instead of relying on a more abstracted interface.
+        </p>
+      </div>
+      <figure>
+        <img src="assets/homelab/webmin-dashboard.png" alt="Webmin dashboard showing system information for the server" />
+        <figcaption>Webmin dashboard used for lightweight server management and system visibility.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="nas-setup">
+      <h2 id="nas-setup">NAS Setup and Samba Configuration</h2>
+      <div class="grid-2">
+        <figure>
+          <img src="assets/homelab/samba-user-setup.png" alt="Terminal output showing Samba group and user setup" />
+          <figcaption>Creating the Samba user and restarting the SMB service.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/homelab/windows-map-drive.png" alt="Windows map network drive dialog pointing to the NAS share" />
+          <figcaption>Mapping the share from a Windows client to verify real network access.</figcaption>
+        </figure>
+      </div>
+      <div class="section-card">
+        <p>
+          Once the base system was ready, I configured the 1 TB hard drive as shared storage and set up Samba so the server could act as a NAS on the local network.
+          I created a share, added the user to the appropriate group, set the SMB password, restarted the service, and then verified access from Windows by mapping the network drive.
+        </p>
+      </div>
+      <figure>
+        <img src="assets/homelab/windows-share-access.png" alt="Windows File Explorer showing successful access to the NAS share" />
+        <figcaption>Successful Windows-side access to the NAS share after configuration and authentication.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="troubleshooting">
+      <h2 id="troubleshooting">Storage Troubleshooting</h2>
+      <div class="grid-2">
+        <figure>
+          <img src="assets/homelab/drive-error.png" alt="Terminal showing NTFS mount failure due to unclean filesystem state" />
+          <figcaption>Initial mount problem caused by an unclean NTFS state from Windows.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/homelab/drive-fixed.png" alt="Terminal showing ntfsfix and successful mount of the drive" />
+          <figcaption>Using repair steps and successfully mounting the storage drive afterward.</figcaption>
+        </figure>
+      </div>
+      <div class="callout">
+        The drive would not mount normally because the NTFS filesystem had been left in an unclean state by Windows. Solving that issue was one of the most useful parts of the project because it turned a basic setup task into a real troubleshooting exercise.
+      </div>
+    </section>
+
+    <section aria-labelledby="security">
+      <h2 id="security">Firewall and Access Control</h2>
+      <div class="grid-2">
+        <figure>
+          <img src="assets/homelab/ufw-firewall.png" alt="UFW status output showing firewall rules for SSH, Samba, and Webmin" />
+          <figcaption>UFW rules allowing only the services needed for administration and file sharing.</figcaption>
+        </figure>
+        <div class="section-card">
+          <p class="no-top-margin">
+            I configured UFW to allow the services I needed for this build, including SSH, Samba, and Webmin.
+            This gave me experience thinking through service exposure instead of just making everything reachable by default.
+          </p>
+          <ul class="clean-list">
+            <li>SSH for remote administration</li>
+            <li>Samba ports for file sharing</li>
+            <li>Webmin for browser-based management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="skills-learned">
+      <div class="section-card">
+        <h2 id="skills-learned">Skills Demonstrated</h2>
+        <ul class="clean-list">
+          <li>Hardware repurposing and practical home lab design</li>
+          <li>Ubuntu Server setup and basic Linux administration</li>
+          <li>Evaluating and changing management platforms based on learning goals</li>
+          <li>Samba / SMB share configuration and user setup</li>
+          <li>NTFS mount troubleshooting in Linux</li>
+          <li>Firewall configuration with UFW</li>
+          <li>Client-side validation from Windows</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="next-steps">
+      <div class="section-card">
+        <h2 id="next-steps">Next Steps</h2>
+        <p>
+          This project is the foundation of a larger home lab. Future additions may include backup workflows, monitoring, self-hosted services, and game server hosting.
+          As the lab grows, those expansions can become related portfolio projects of their own.
+        </p>
+        <ul class="tag-list">
+          <li>Ubuntu Server</li>
+          <li>Linux Administration</li>
+          <li>Webmin</li>
+          <li>Samba</li>
+          <li>UFW</li>
+          <li>Home Lab</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Benjamin Graydon</p>
+  </footer>
+</body>
+</html>
