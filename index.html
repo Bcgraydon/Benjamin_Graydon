@@ -1,83 +1,158 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Benjamin Graydon - Digital Portfolio</title>
-<link rel="stylesheet" href="css/styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Benjamin Graydon | IT, Networking, and Systems Portfolio</title>
+  <meta name="description" content="Portfolio of Benjamin Graydon, a UCF Information Technology student focused on IT support, networking, Linux systems, and security-minded problem solving." />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-<nav aria-label="Primary">
-<a class="pill" href="index.html" aria-current="page">Home</a>
-<a class="pill" href="about.html">About</a>
-<a class="pill" href="resume.html">Resume</a>
-<a class="pill" href="projects.html">Projects</a>
-</nav>
+  <header>
+    <nav aria-label="Primary">
+      <a class="pill" href="index.html" aria-current="page">Home</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="resume.html">Resume</a>
+      <a class="pill" href="projects.html">Projects</a>
+    </nav>
 
-<div class="hero">
-<div class="intro">
-<h1>Benjamin Graydon</h1>
-<p>
-<a href="mailto:be773920@ucf.edu">be773920@ucf.edu</a> -
-<a href="https://www.linkedin.com/in/benjamin-graydon-3b5562300/" target="_blank" rel="noopener">LinkedIn</a>
-</p>
+    <div class="hero-card">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Benjamin Graydon</p>
+          <h1>Hands-on IT, networking, and home lab projects built to solve real problems.</h1>
+          <p class="inline-meta">
+            UCF Information Technology student | Secure Computing and Networking minor | Prior Marine Corps Reserve service
+          </p>
+          <p>
+            I am building a foundation for entry-level IT, infrastructure, networking, and security-focused roles through practical projects,
+            structured troubleshooting, and clear technical documentation. My work ranges from Java programming and Cisco Packet Tracer labs
+            to Linux administration, NAS setup, and an ongoing historical digitization project.
+          </p>
+          <p>
+            The common thread across my projects is that I like systems I can test, break down, rebuild, and explain clearly. That includes
+            diagnosing network behavior, validating access control, repurposing old hardware into a useful home lab server, and documenting each step so the work is easy to follow.
+          </p>
+          <div class="actions">
+            <a class="btn" href="projects.html">View Projects</a>
+            <a class="btn secondary" href="./assets/Graydon-resume.pdf" target="_blank" rel="noopener">Open Resume PDF</a>
+          </div>
+        </div>
 
-<p>
-I’m a UCF Information Technology student with a Secure Computing and Networking minor and prior service in the
-United States Marine Corps Reserves. I’m focused on entry-level IT, networking, and cybersecurity roles where I can bring
-structured troubleshooting, clear documentation, and a disciplined approach to technical problem solving.
-</p>
+        <img src="assets/HeadShot.jpg" alt="Headshot of Benjamin Graydon" class="headshot" width="240" height="240" />
+      </div>
+    </div>
+  </header>
 
-<p>
-I like work that’s hands-on and methodical, whether that’s diagnosing a networking issue, documenting a process so someone
-else can follow it, or building a project that actually solves a problem. My recent work includes networking labs, security-focused
-authentication testing, Java development projects, and Project Hines, which is centered on digitizing handwritten WWII logbooks.
-</p>
+  <main id="main">
+    <section aria-labelledby="featured-projects">
+      <div class="page-hero">
+        <h2 id="featured-projects">Featured Projects</h2>
+        <p class="lede">A quick view of the work that best represents my current direction in programming, networking, and systems administration.</p>
+      </div>
 
-<p>
-What draws me most to technology is that it forms the foundation for nearly everything today. Communication, business,
-infrastructure, and security all rely on systems and networks working correctly, and I want to build a career helping design,
-support, and secure those systems.
-</p>
+      <div class="feature-grid">
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/homelab/webmin-dashboard.png" alt="Webmin dashboard for the repurposed laptop home lab server" />
+          </div>
+          <div class="card-body">
+            <h3>Home Lab Server / NAS</h3>
+            <p>Repurposed old laptop hardware into an Ubuntu-based home lab server with Webmin, Samba, UFW firewall rules, and Windows-accessible shared storage.</p>
+            <ul class="tag-list">
+              <li>Ubuntu Server</li>
+              <li>Webmin</li>
+              <li>Samba</li>
+              <li>UFW</li>
+            </ul>
+            <p class="actions"><a class="btn" href="homelab.html">View Project</a></p>
+          </div>
+        </article>
 
-<p class="actions">
-<a class="btn" href="./assets/Graydon-resume.pdf" download="Benjamin-Graydon-Resume.pdf">Download Resume (PDF)</a>
-<a class="btn secondary" href="./assets/Graydon-resume.pdf" target="_blank" rel="noopener">Open PDF</a>
-</p>
-</div>
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/mediumbusiness/MB-Topology.png" alt="Packet Tracer topology for the medium business network" />
+          </div>
+          <div class="card-body">
+            <h3>Medium Business Network</h3>
+            <p>Enterprise-style Packet Tracer design with segmented VLANs, a Layer 3 core, DHCP relay, centralized services, and ACL-based policy enforcement.</p>
+            <ul class="tag-list">
+              <li>Packet Tracer</li>
+              <li>SVIs</li>
+              <li>ACLs</li>
+              <li>DHCP Relay</li>
+            </ul>
+            <p class="actions"><a class="btn" href="network2.html">View Project</a></p>
+          </div>
+        </article>
 
-<img src="assets/HeadShot.jpg" alt="Headshot of Benjamin Graydon"
-width="180" height="143" class="headshot" />
-</div>
-</header>
+        <article class="project-card">
+          <div class="card-media">
+            <img src="assets/Bank-Sim.jpg" alt="Output from the Java banking simulator project" />
+          </div>
+          <div class="card-body">
+            <h3>Banking Simulator</h3>
+            <p>Java multithreaded banking simulation featuring shared resources, synchronized transfers, lock ordering, and audit snapshots.</p>
+            <ul class="tag-list">
+              <li>Java</li>
+              <li>Threads</li>
+              <li>Synchronization</li>
+              <li>Concurrency</li>
+            </ul>
+            <p class="actions"><a class="btn" href="project2.html">View Project</a></p>
+          </div>
+        </article>
 
-<main id="main">
-<section aria-labelledby="featured">
-<h2 id="featured">Featured Projects</h2>
-<ul>
-<li><strong>Nile Dot Com:</strong> event-driven Java GUI e-commerce demo - <a href="project1.html">view project</a>.</li>
-<li><strong>Banking Simulator:</strong> Java multithreaded bank with atomic transfers and audits - <a href="project2.html">view project</a>.</li>
-<li><strong>Small Business Network:</strong> Packet Tracer lab with VLAN segmentation, trunks, and ACL policy testing - <a href="network1.html">view project</a>.</li>
-<li><strong>Medium Business Network:</strong> Packet Tracer enterprise-style network with VLANs, SVIs, DHCP relay, and ACL segmentation - <a href="network2.html">view project</a>.</li>
-<li><strong>Hines Project:</strong> Digitized, transcribed, and indexed WWII log books into a searchable archive with clear metadata and a simple browse/search view.</li>
-</ul>
-</section>
+        <article class="project-card">
+          <div class="card-body">
+            <h3>Project Hines</h3>
+            <p>An ongoing personal project to digitize handwritten WWII flight logbooks into a searchable archive using OCR, preprocessing, and structured data extraction.</p>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>OCR</li>
+              <li>Data Cleaning</li>
+              <li>Archival Workflow</li>
+            </ul>
+            <p class="actions"><a class="btn" href="hines.html">View Project</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<section aria-labelledby="quicklinks">
-<h2 id="quicklinks">Quick Links</h2>
-<ul>
-<li><a href="about.html">About Me</a></li>
-<li><a href="resume.html">Resume</a></li>
-<li><a href="projects.html">Projects</a></li>
-</ul>
-</section>
-</main>
+    <section aria-labelledby="strengths">
+      <div class="grid-3">
+        <article class="stat-card">
+          <h3 id="strengths">What I bring</h3>
+          <p>Structured troubleshooting, step-by-step documentation, and a willingness to learn by building systems instead of just reading about them.</p>
+        </article>
+        <article class="stat-card">
+          <h3>Technical focus</h3>
+          <p>Networking fundamentals, Linux administration, practical security tooling, and the kind of hands-on project work that translates well to IT support and infrastructure roles.</p>
+        </article>
+        <article class="stat-card">
+          <h3>Current direction</h3>
+          <p>Expanding my home lab, improving my portfolio, and building projects that show real proof of work across systems, networking, and automation.</p>
+        </article>
+      </div>
+    </section>
 
-<footer>
-<p>&copy; 2026 Benjamin Graydon</p>
-</footer>
+    <section aria-labelledby="quick-links">
+      <div class="section-card">
+        <h2 id="quick-links">Quick Links</h2>
+        <ul class="quick-list">
+          <li><a href="about.html">Learn more about my background and technical interests</a></li>
+          <li><a href="resume.html">View my resume and skills summary</a></li>
+          <li><a href="projects.html">Browse the full project collection</a></li>
+          <li><a href="mailto:be773920@ucf.edu">Contact me by email</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Benjamin Graydon</p>
+  </footer>
 </body>
 </html>
