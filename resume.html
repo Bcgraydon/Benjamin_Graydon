@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resume | Benjamin Graydon</title>
-  <meta name="description" content="Resume page for Benjamin Graydon with summary, education, experience, skills, and key technical projects." />
+  <meta name="description" content="Resume page for Benjamin Graydon with summary, education, experience, technical skills, certifications, and key technical projects." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -17,15 +17,16 @@
       <a class="pill" href="resume.html" aria-current="page">Resume</a>
       <a class="pill" href="projects.html">Projects</a>
       <button id="theme-toggle" class="pill theme-toggle" type="button" aria-label="Toggle light and dark mode">
-  Light Mode
-</button>
+        Light Mode
+      </button>
     </nav>
 
     <div class="page-hero">
       <p class="eyebrow">Resume Snapshot</p>
       <h1>Benjamin Graydon</h1>
       <p class="inline-meta">
-        <a href="mailto:be773920@ucf.edu">be773920@ucf.edu</a> |
+        Orlando, FL |
+        <a href="mailto:bcgraydon@gmail.com">bcgraydon@gmail.com</a> |
         <a href="https://www.linkedin.com/in/benjamin-graydon-3b5562300/" target="_blank" rel="noopener">LinkedIn</a>
       </p>
       <div class="actions">
@@ -40,9 +41,11 @@
       <div class="section-card">
         <h2 id="summary">Executive Summary</h2>
         <p>
-          UCF Information Technology student with a Secure Computing and Networking minor and prior Marine Corps Reserve service.
-          Focused on entry-level IT, infrastructure, networking, and security-minded technical roles. Building practical experience through Linux administration,
-          home lab setup, Cisco Packet Tracer projects, structured troubleshooting, and clear technical documentation.
+          UCF Information Technology student and Marine Corps veteran focused on entry-level IT operations, help desk, desktop support,
+          junior systems administration, and network support roles. Building practical foundations through coursework and projects in
+          Windows 10/11, Microsoft 365 concepts, Active Directory/Entra ID account tasks, core networking, Linux administration, and
+          structured troubleshooting. Known for clear step-by-step documentation, disciplined procedures, technical communication,
+          and the ability to learn enterprise tools quickly.
         </p>
       </div>
     </section>
@@ -52,25 +55,24 @@
         <article class="section-card">
           <h2 id="education-experience">Education</h2>
           <h3>University of Central Florida</h3>
-          <p><strong>B.S. Information Technology</strong></p>
+          <p><strong>Bachelor of Science in Information Technology</strong></p>
+          <p>UCF GPA: 3.63/4.00</p>
           <p>Minor: Secure Computing and Networking</p>
-          <p>Aug 2024 - Present</p>
-
-          <h3>Gulf Coast State College</h3>
-          <p><strong>Associate of Arts</strong></p>
-          <p>Completed lower-division coursework prior to transfer.</p>
+          <p>August 2023 – Spring 2026</p>
+          <p>Awards: Dean’s List, Fall 2024, Spring 2025, Fall 2025; President’s Honor Roll, Spring 2026</p>
         </article>
 
         <article class="section-card">
           <h2>Experience</h2>
           <h3>United States Marine Corps Reserve</h3>
           <p><strong>All-Source Intelligence Analyst / Ground Sensor Operator</strong></p>
-          <p>Oct 2020 - Apr 2025</p>
+          <p>October 2020 – April 2025</p>
           <ul class="clean-list">
-            <li>Maintained accurate records, summarized operational information, and supported structured reporting.</li>
-            <li>Delivered concise briefings and status updates to support decision-making.</li>
-            <li>Helped track mission activity, personnel accountability, and equipment status in an operations environment.</li>
-            <li>Applied disciplined procedures and clear handoffs in time-sensitive situations.</li>
+            <li>Collected, reviewed, and summarized field information into concise reports and briefings for leadership decision-making.</li>
+            <li>Planned and led information-gathering tasks while aligning team efforts with leadership priorities and operational requirements.</li>
+            <li>Supported operations center activities by tracking multiple missions, synchronizing updates, and maintaining accurate reporting.</li>
+            <li>Maintained accountability for 40 Marines and high-value equipment in a command-and-control environment.</li>
+            <li>Deployed, calibrated, and maintained tactical ground sensor systems; verified power and network links, ran diagnostics, and documented troubleshooting steps.</li>
           </ul>
         </article>
       </div>
@@ -81,14 +83,14 @@
         <h2 id="skills">Technical Skills</h2>
         <div class="grid-2">
           <div>
-            <p><strong>Systems:</strong> Windows, Ubuntu Server, Linux command line, Webmin, Samba, UFW</p>
-            <p><strong>Networking:</strong> TCP/IP, VLANs, ACLs, DNS, DHCP, subnetting, routing fundamentals</p>
-            <p><strong>Security / Analysis:</strong> Nmap, Hydra, Wireshark, least privilege and authentication concepts</p>
+            <p><strong>Platforms & Admin:</strong> Active Directory/Entra ID account tasks, Microsoft 365 basics, Windows Server basics</p>
+            <p><strong>Operating Systems:</strong> Windows 10/11, macOS support, Ubuntu/Linux basics</p>
+            <p><strong>Networking:</strong> TCP/IP, DNS, DHCP, VLANs, ACLs, VPN, NAT, Wi-Fi troubleshooting, LAN/WAN fundamentals</p>
           </div>
           <div>
-            <p><strong>Programming:</strong> Java, Python, C, SQL</p>
-            <p><strong>Tools:</strong> Cisco Packet Tracer, Git, Excel, virtualization platforms</p>
-            <p><strong>Strengths:</strong> Troubleshooting, documentation, process discipline, technical communication</p>
+            <p><strong>Security:</strong> MFA, least privilege, BitLocker concepts, SIEM/IDS/IPS concepts, vulnerability management fundamentals</p>
+            <p><strong>Endpoint & Device Support:</strong> Imaging concepts, printers/peripherals, asset inventory, remote support</p>
+            <p><strong>Tools:</strong> Wireshark, Cisco Packet Tracer, Event Viewer, PowerShell basics, Quick Assist, AnyDesk, Excel, Git</p>
           </div>
         </div>
       </div>
@@ -96,37 +98,35 @@
 
     <section aria-labelledby="projects">
       <div class="section-card">
-        <h2 id="projects">Selected Projects</h2>
+        <h2 id="projects">Selected Technical Projects</h2>
         <ul class="clean-list">
-          <li><strong>Home Lab Server / NAS:</strong> Repurposed laptop hardware into an Ubuntu home lab server with Webmin, Samba file sharing, and UFW firewall configuration - <a href="homelab.html">view project</a>.</li>
-          <li><strong>Medium Business Network:</strong> Packet Tracer network with VLANs, SVIs, DHCP relay, and ACL segmentation - <a href="network2.html">view project</a>.</li>
-          <li><strong>Small Business Network:</strong> Packet Tracer lab with VLAN segmentation, trunks, and ACL policy testing - <a href="network1.html">view project</a>.</li>
-          <li><strong>Banking Simulator:</strong> Java multithreaded bank with synchronized transfers and audits - <a href="project2.html">view project</a>.</li>
-          <li><strong>Nile Dot Com:</strong> Event-driven Java GUI with inventory, cart, and transaction logging - <a href="project1.html">view project</a>.</li>
-          <li><strong>Project Hines:</strong> Ongoing OCR-based digitization workflow for WWII flight logbooks - <a href="hines.html">view project</a>.</li>
+          <li><strong>Medium Business Network Design:</strong> Designed a segmented enterprise-style Cisco Packet Tracer network with 9 VLANs, Layer 3 switching, SVIs, inter-VLAN routing, ACL-based traffic policies, DHCP relay, DNS, and internal web services - <a href="network2.html">view project</a>.</li>
+          <li><strong>Home Server / NAS Lab:</strong> Repurposed an older laptop into an Ubuntu Server homelab for Linux administration, Samba file sharing, user-based access controls, storage mounts, LAN-only firewall rules, and systems troubleshooting - <a href="homelab.html">view project</a>.</li>
+          <li><strong>Small Business Network Design:</strong> Built a Cisco Packet Tracer network with department VLAN segmentation, trunk links, router-on-a-stick inter-VLAN routing, ACL policy testing, and structured connectivity validation - <a href="network1.html">view project</a>.</li>
+          <li><strong>Banking Simulator:</strong> Developed a Java multithreaded banking simulation using synchronized transfers, account activity tracking, and audit-style transaction output - <a href="project2.html">view project</a>.</li>
+          <li><strong>Nile Dot Com:</strong> Built an event-driven Java GUI application with inventory lookup, cart management, transaction calculations, and order logging - <a href="project1.html">view project</a>.</li>
+          <li><strong>Project Hines:</strong> Developed an OCR-based workflow to digitize and structure WWII flight logbook data into a searchable spreadsheet/archive format - <a href="hines.html">view project</a>.</li>
         </ul>
       </div>
     </section>
 
-    <section aria-labelledby="coursework-awards">
+    <section aria-labelledby="certifications">
       <div class="grid-2">
         <article class="section-card">
-          <h2 id="coursework-awards">Relevant Coursework</h2>
+          <h2 id="certifications">Certifications</h2>
           <ul class="clean-list">
-            <li>Secure Computing and Networking</li>
-            <li>Operating Systems / Systems Administration</li>
-            <li>Computer Network Concepts</li>
-            <li>Computer Security</li>
-            <li>Programming in Java and C</li>
+            <li>TestOut IT Fundamentals</li>
+            <li>CompTIA Security+ — in progress</li>
+            <li>CompTIA Network+ — in progress</li>
           </ul>
         </article>
 
         <article class="section-card">
-          <h2>Awards</h2>
+          <h2>Additional Information</h2>
           <ul class="clean-list">
-            <li>Dean’s List - Fall 2024</li>
-            <li>Dean’s List - Spring 2025</li>
-            <li>Dean’s List - Fall 2025</li>
+            <li>Secret clearance held during military service</li>
+            <li>Marine Corps veteran with experience in reporting, accountability, and operations support</li>
+            <li>Interested in IT support, network support, junior systems administration, cybersecurity, and DoD/contractor IT roles</li>
           </ul>
         </article>
       </div>
@@ -136,35 +136,36 @@
   <footer>
     <p>&copy; 2026 Benjamin Graydon</p>
   </footer>
+
   <script>
-  (function () {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const body = document.body;
-    const toggleButton = document.getElementById("theme-toggle");
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      const body = document.body;
+      const toggleButton = document.getElementById("theme-toggle");
 
-    if (savedTheme === "light" || (!savedTheme && prefersLight)) {
-      body.classList.add("light-mode");
-    }
+      if (savedTheme === "light" || (!savedTheme && prefersLight)) {
+        body.classList.add("light-mode");
+      }
 
-    function updateButtonText() {
-      if (!toggleButton) return;
-      toggleButton.textContent = body.classList.contains("light-mode")
-        ? "Dark Mode"
-        : "Light Mode";
-    }
+      function updateButtonText() {
+        if (!toggleButton) return;
+        toggleButton.textContent = body.classList.contains("light-mode")
+          ? "Dark Mode"
+          : "Light Mode";
+      }
 
-    updateButtonText();
+      updateButtonText();
 
-    if (toggleButton) {
-      toggleButton.addEventListener("click", function () {
-        body.classList.toggle("light-mode");
-        const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
-        localStorage.setItem("theme", currentTheme);
-        updateButtonText();
-      });
-    }
-  })();
-</script>
+      if (toggleButton) {
+        toggleButton.addEventListener("click", function () {
+          body.classList.toggle("light-mode");
+          const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
+          localStorage.setItem("theme", currentTheme);
+          updateButtonText();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
