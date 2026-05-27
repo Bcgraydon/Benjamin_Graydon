@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Project Hines | Benjamin Graydon</title>
-  <meta name="description" content="Overview of Project Hines, an OCR-based WWII flight logbook digitization project." />
+  <meta name="description" content="Project Hines is a WWII flight logbook digitization project focused on transcription, OCR experimentation, spreadsheet structuring, and archival preservation." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -17,8 +17,8 @@
       <a class="pill" href="resume.html">Resume</a>
       <a class="pill" href="projects.html">Projects</a>
       <button id="theme-toggle" class="pill theme-toggle" type="button" aria-label="Toggle light and dark mode">
-  Light Mode
-</button>
+        Light Mode
+      </button>
     </nav>
 
     <p class="actions">
@@ -26,10 +26,11 @@
     </p>
 
     <div class="page-hero">
-      <p class="eyebrow">Digitization Project</p>
+      <p class="eyebrow">Archival Digitization Project</p>
       <h1>Project Hines - WWII Flight Logbook Digitization</h1>
       <p class="lede">
-        An ongoing project focused on turning handwritten WWII flight logbooks into structured, searchable digital records.
+        A personal archival and data-structuring project focused on converting handwritten WWII-era flight logbooks into verified,
+        searchable spreadsheet records.
       </p>
     </div>
   </header>
@@ -39,58 +40,111 @@
       <div class="section-card">
         <h2 id="overview">Overview</h2>
         <p>
-          Project Hines is a personal archival project built around scanned historical logbooks. The goal is to create a workflow that can take handwritten records,
-          extract the important information, organize it into a structured format, and make the final archive easier to search, browse, and preserve.
+          Project Hines is a long-term digitization project built around my great-grandfather’s WWII flight logbooks. The goal is to preserve
+          the original historical records while turning handwritten logbook entries into structured digital data that can be searched, filtered,
+          reviewed, and expanded over time.
+        </p>
+        <p>
+          The project combines manual transcription, spreadsheet design, image preprocessing, OCR experimentation, and human verification.
+          Because the handwriting, abbreviations, page layout, and historical context are inconsistent, the workflow is designed to prioritize
+          accuracy over full automation.
         </p>
       </div>
     </section>
 
-    <section aria-labelledby="pipeline">
+    <section aria-labelledby="current-status">
       <div class="grid-2">
         <article class="section-card">
-          <h2 id="pipeline">Planned Workflow</h2>
+          <h2 id="current-status">Current Status</h2>
           <ul class="clean-list">
-            <li>Preprocess scanned pages to improve readability</li>
-            <li>Use OCR to extract handwritten text where possible</li>
-            <li>Prompt for manual review when handwriting is unclear</li>
-            <li>Transform extracted data into a structured spreadsheet or searchable dataset</li>
-            <li>Preserve metadata so records remain understandable and navigable</li>
+            <li>Created an initial verified transcription batch ending in October 1939.</li>
+            <li>Structured the first batch into a spreadsheet format for review, correction, and future expansion.</li>
+            <li>Established a baseline workflow for comparing scanned logbook pages against manually verified entries.</li>
+            <li>Continuing to refine the process before scaling the workflow across additional logbook pages.</li>
           </ul>
         </article>
 
         <article class="section-card">
-          <h2>Tools and Direction</h2>
-          <p>Current direction includes a zero-cost Python-based workflow on Windows using tools such as OpenCV, Tesseract, and pandas, with optional OCR model fallbacks for harder handwriting.</p>
+          <h2>Project Goal</h2>
+          <p>
+            The end goal is a searchable archive that preserves each flight entry in a consistent format while keeping the original meaning and
+            context of the handwritten records intact. The project is intentionally iterative: each corrected batch improves the structure,
+            validation rules, and future OCR workflow.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="workflow">
+      <div class="section-card">
+        <h2 id="workflow">Workflow</h2>
+        <ul class="clean-list">
+          <li><strong>Scan organization:</strong> Maintain source images and transcription files in an organized project structure.</li>
+          <li><strong>Image review:</strong> Inspect scanned pages for readability, layout issues, handwriting variation, and unclear entries.</li>
+          <li><strong>Manual transcription:</strong> Enter flight log data into a structured spreadsheet while preserving dates, locations, aircraft details, flight times, names, and notes where available.</li>
+          <li><strong>Verification:</strong> Review unclear entries against the original scan and flag uncertain words or abbreviations for later correction.</li>
+          <li><strong>OCR experimentation:</strong> Test preprocessing and OCR tools to assist with extraction, while keeping human review as the accuracy control.</li>
+          <li><strong>Spreadsheet export:</strong> Store the cleaned data in a format that can be searched, filtered, corrected, and expanded into a larger archive.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="tools">
+      <div class="grid-2">
+        <article class="section-card">
+          <h2 id="tools">Tools and Technologies</h2>
           <ul class="tag-list">
             <li>Python</li>
+            <li>pandas</li>
+            <li>openpyxl</li>
+            <li>Excel</li>
             <li>OpenCV</li>
             <li>Tesseract</li>
-            <li>pandas</li>
             <li>OCR</li>
+            <li>Git</li>
+            <li>Windows</li>
+          </ul>
+        </article>
+
+        <article class="section-card">
+          <h2>Technical Focus Areas</h2>
+          <ul class="clean-list">
+            <li>Data cleaning and spreadsheet structuring</li>
+            <li>Image preprocessing for historical documents</li>
+            <li>OCR testing for difficult handwriting</li>
+            <li>Human-in-the-loop verification</li>
+            <li>Repeatable project organization and documentation</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section aria-labelledby="why-it-matters">
+    <section aria-labelledby="resume-value">
       <div class="section-card">
-        <h2 id="why-it-matters">Why This Project Matters</h2>
+        <h2 id="resume-value">What This Project Demonstrates</h2>
         <p>
-          What makes this project meaningful to me is that it combines technical problem solving with preservation. It is not just about OCR in the abstract.
-          It is about taking difficult, inconsistent historical material and building a workflow that makes the information more accessible without losing context.
+          Project Hines demonstrates practical problem solving with imperfect real-world data. Unlike a classroom dataset, the logbooks contain
+          inconsistent handwriting, historical abbreviations, variable page quality, and entries that require judgment during transcription.
+          The project shows my ability to break a messy problem into a repeatable technical workflow, document decisions, validate output,
+          and improve the process over time.
         </p>
         <p>
-          From a technical perspective, it also pushes me to think about preprocessing, imperfect data, human review, structured output, and how to design a system that is useful even when automation is not perfect.
+          It also reflects skills that transfer directly into IT and data-focused roles: attention to detail, structured documentation,
+          troubleshooting, data validation, file organization, and the ability to combine automation with manual quality control.
         </p>
       </div>
     </section>
 
-    <section aria-labelledby="status">
+    <section aria-labelledby="next-steps">
       <div class="section-card">
-        <h2 id="status">Current Status</h2>
-        <p>
-          This is an active project, and the write-up will grow as the pipeline becomes more complete. I am keeping it on the portfolio because it reflects the kind of long-form, real-world technical work I want to keep building: practical, iterative, and useful beyond the classroom.
-        </p>
+        <h2 id="next-steps">Next Steps</h2>
+        <ul class="clean-list">
+          <li>Continue transcribing and verifying additional logbook pages.</li>
+          <li>Refine the spreadsheet structure as new entry types and edge cases appear.</li>
+          <li>Improve image preprocessing to support more reliable OCR testing.</li>
+          <li>Evaluate OCR fallback options for difficult handwriting while keeping manual review in the loop.</li>
+          <li>Build a more navigable archive view once enough verified data has been collected.</li>
+        </ul>
       </div>
     </section>
   </main>
@@ -98,35 +152,36 @@
   <footer>
     <p>&copy; 2026 Benjamin Graydon</p>
   </footer>
+
   <script>
-  (function () {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const body = document.body;
-    const toggleButton = document.getElementById("theme-toggle");
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      const body = document.body;
+      const toggleButton = document.getElementById("theme-toggle");
 
-    if (savedTheme === "light" || (!savedTheme && prefersLight)) {
-      body.classList.add("light-mode");
-    }
+      if (savedTheme === "light" || (!savedTheme && prefersLight)) {
+        body.classList.add("light-mode");
+      }
 
-    function updateButtonText() {
-      if (!toggleButton) return;
-      toggleButton.textContent = body.classList.contains("light-mode")
-        ? "Dark Mode"
-        : "Light Mode";
-    }
+      function updateButtonText() {
+        if (!toggleButton) return;
+        toggleButton.textContent = body.classList.contains("light-mode")
+          ? "Dark Mode"
+          : "Light Mode";
+      }
 
-    updateButtonText();
+      updateButtonText();
 
-    if (toggleButton) {
-      toggleButton.addEventListener("click", function () {
-        body.classList.toggle("light-mode");
-        const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
-        localStorage.setItem("theme", currentTheme);
-        updateButtonText();
-      });
-    }
-  })();
-</script>
+      if (toggleButton) {
+        toggleButton.addEventListener("click", function () {
+          body.classList.toggle("light-mode");
+          const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
+          localStorage.setItem("theme", currentTheme);
+          updateButtonText();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
